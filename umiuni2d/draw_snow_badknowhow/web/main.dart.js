@@ -4964,87 +4964,89 @@ gO:function(){return this.a.c},
 ga7:function(){return this.a.d},
 geO:function(a){return 0},
 eL:function(){this.r=!0},
-au:function(){var z=0,y=new P.a1(),x=1,w,v=this,u,t,s,r,q,p,o,n,m,l,k,j,i,h
+au:function(){var z=0,y=new P.a1(),x=1,w,v=this,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g
 function $async$au(a,b){if(a===1){w=b
-z=x}while(true)switch(z){case 0:j=H
-j=j
-i=P
-u=j.cW(new i.bz(Date.now(),!1))
-j=v
-t=j.a
-j=E
-j=j
-i=Float64Array
-h=H
-s=new j.Q(new i(h.n(16)))
-j=s
-j.P()
-j=E
-j=j
-i=Float64Array
-h=H
-r=new j.Q(new i(h.n(16)))
-j=r
-j.P()
-j=E
-j=j
-i=Float64Array
-h=H
-q=new j.Q(new i(h.n(16)))
-j=q
-j.P()
-j=G
-p=new j.hg(null,null,null,1,[],[],[],null,0,s,r,[q],[])
-j=p
-i=t
-j.c=i.a
-j=p
-j.d=t
-j=p
-j.eB()
-j=p
-j.S(0)
-o=0,n=0
-case 2:j=v
-if(!j.d){z=4
-break}j=P
-j=j
-i=P
+z=x}while(true)switch(z){case 0:i=H
+i=i
+h=P
+u=i.cW(new h.bz(Date.now(),!1))
+i=v
+t=i.a
+i=E
+i=i
+h=Float64Array
+g=H
+s=new i.Q(new h(g.n(16)))
+i=s
+i.P()
+i=E
+i=i
+h=Float64Array
+g=H
+r=new i.Q(new h(g.n(16)))
+i=r
+i.P()
+i=E
+i=i
+h=Float64Array
+g=H
+q=new i.Q(new h(g.n(16)))
+i=q
+i.P()
+i=G
+p=new i.hg(null,null,null,1,[],[],[],null,0,s,r,[q],[])
+i=p
+h=t
+i.c=h.a
+i=p
+i.d=t
+i=p
+i.eB()
+i=p
+i.S(0)
+o=0,n=0,m=0
+case 2:i=v
+if(!i.d){z=4
+break}i=P
+i=i
+h=P
 z=5
-return H.p(j.eX(new i.aC(15e3),null,null),$async$au,y)
-case 5:m=Date.now()
-j=v
-j.b=m
-l=m-u
-j=v
-j=j
-i=C
-i=i.c
-j.eI(i.aa(u+l))
-o+=l
-if(l<0);else ;++n
-j=v
-j.r=!0
-z=o>40?6:7
+return H.p(i.eX(new h.aC(15e3),null,null),$async$au,y)
+case 5:l=Date.now()
+i=v
+i.b=l
+k=l-u
+i=v
+i=i
+h=C
+h=h.c
+i.eI(h.aa(u+k))
+o+=k
+n+=k
+if(k<0);else ;++m
+i=v
+i.r=!0
+z=n>10?6:7
 break
-case 6:j=p
-j.S(0)
-j=v
-j.eJ(v,p)
-j=p
-j.al(0)
-j=v
-j.r=!1
-case 7:z=n>40?8:9
-break
-case 8:j=C
-j=j.c
-k="###fps  "+j.da(o,n)
-j=H
-j.dR(k)
-o=0
+case 6:i=p
+i.S(0)
+i=v
+i.eJ(v,p)
+i=p
+i.al(0)
+i=v
+i.r=!1
 n=0
-case 9:case 3:u=m
+case 7:z=m>40?8:9
+break
+case 8:i=C
+i=i.c
+j="###fps  "+i.da(o,m)
+i=H
+i.dR(j)
+o=0
+m=0
+case 9:case 3:u=l
 z=2
 break
 case 4:return H.p(null,0,y,null)
