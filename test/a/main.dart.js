@@ -3878,7 +3878,7 @@ bj:function(a,b){var z,y
 z=this.r.a.a
 z[0]=2*this.x/50
 z[1]=2*this.y/50
-for(y=0;y<4;++y)this.r.aD(0.25)
+for(z=0.25*(b/20),y=0;y<4;++y)this.r.aD(z)
 a.cp()},
 bi:function(a,b){var z,y,x,w,v,u,t,s,r,q
 z=F.bI(null)
