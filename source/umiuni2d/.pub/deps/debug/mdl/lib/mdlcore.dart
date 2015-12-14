@@ -33,9 +33,10 @@ import 'package:validate/validate.dart';
 import 'package:di/di.dart' as di;
 
 part "src/core/annotations.dart";
-part "src/core/interfaces.dart";
-part "src/core/utils.dart";
 part "src/core/ConvertValue.dart";
+part "src/core/interfaces.dart";
+part "src/core/mock.dart";
+part "src/core/utils.dart";
 
 part "src/core/MdlComponentHandler.dart";
 part "src/core/MdlConfig.dart";
@@ -44,5 +45,6 @@ part "src/core/MdlComponent.dart";
 abstract class MdlDataConsumer {
     void consume(final data);
 }
+
 
 
