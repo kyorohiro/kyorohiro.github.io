@@ -50,7 +50,7 @@ part 'src/intl/number_format.dart';
  *          name: 'today',
  *          args: [date],
  *          desc: 'Indicate the current date',
- *          examples: {'date' : 'June 8, 2012'});
+ *          examples: const {'date' : 'June 8, 2012'});
  *      print(today(new DateTime.now().toString());
  *
  *      howManyPeople(numberOfPeople, place) => Intl.plural(
@@ -60,7 +60,7 @@ part 'src/intl/number_format.dart';
  *          name: 'msg',
  *          args: [numberOfPeople, place],
  *          desc: 'Description of how many people are seen in a place.',
- *          examples: {'numberOfPeople': 3, 'place': 'London'});
+ *          examples: const {'numberOfPeople': 3, 'place': 'London'});
  *
  * Calling `howManyPeople(2, 'Athens');` would
  * produce "I see 2 other people in Athens." as output in the default locale.
@@ -139,21 +139,21 @@ class Intl {
    * will be substituted in the message.
    *
    * The [message_str] is the string to be translated, which may be interpolated
-   * based on one or more variables. The [name] of the message must 
-   * match the enclosing function name. For methods, it can also be 
+   * based on one or more variables. The [name] of the message must
+   * match the enclosing function name. For methods, it can also be
    * className_methodName. So for a method hello in class Simple, the name
    * can be either "hello" or "Simple_hello". The name must also be globally
    * unique in the program, so the second form can make it easier to distinguish
    * messages with the same name but in different classes.
    * The [args] repeats the arguments of the enclosing
-   * function, [desc] provides a description of usage, 
+   * function, [desc] provides a description of usage,
    * [examples] is a Map of exmaples for each interpolated variable. For example
    *       hello(yourName) => Intl.message(
    *         "Hello, $yourName",
    *         name: "hello",
    *         args: [yourName],
    *         desc: "Say hello",
-   *         examples = {"yourName": "Sparky"}.
+   *         examples = const {"yourName": "Sparky"}.
    * The source code will be processed via the analyzer to extract out the
    * message data, so only a subset of valid Dart code is accepted. In
    * particular, everything must be literal and cannot refer to variables
@@ -172,9 +172,12 @@ class Intl {
    */
   static String message(String message_str, {String desc: '',
       Map<String, String> examples: const {}, String locale, String name,
-      List<String> args, String meaning}) {
-    return messageLookup.lookupMessage(
-        message_str, desc, examples, locale, name, args, meaning);
+      List<String> args, String meaning}) =>
+    _message(message_str, locale, name, args);
+
+  /** Omit the compile-time only parameters so dart2js can see to drop them. */
+  static _message(String message_str, String locale, String name, List args) {
+    return messageLookup.lookupMessage(message_str, locale, name, args);
   }
 
   /**
@@ -182,12 +185,6 @@ class Intl {
    * be the default.
    */
   String get locale => _locale;
-
-  /**
-   * Return true if the locale exists, or if it is null. The null case
-   * is interpreted to mean that we use the default locale.
-   */
-  static bool _localeExists(localeName) => DateFormat.localeExists(localeName);
 
   /**
    * Given [newLocale] return a locale that we have data for that is similar
