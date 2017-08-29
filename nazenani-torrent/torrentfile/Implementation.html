@@ -1,0 +1,923 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Bencodeの実装 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Content.html" />
+    
+    
+    <link rel="prev" href="Bencode.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/Intro.html">
+            
+                <a href="../intro/Intro.html">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/Introduction.html">
+            
+                <a href="../intro/Introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/About.html">
+            
+                <a href="../intro/About.html">
+            
+                    
+                    Torrentとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/Goal.html">
+            
+                <a href="../intro/Goal.html">
+            
+                    
+                    ゴール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Torrentfile.html">
+            
+                <a href="Torrentfile.html">
+            
+                    
+                    Torrentファイルを読み込む
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Bencode.html">
+            
+                <a href="Bencode.html">
+            
+                    
+                    Bencode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="Implementation.html">
+            
+                <a href="Implementation.html">
+            
+                    
+                    Bencodeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="Content.html">
+            
+                <a href="Content.html">
+            
+                    
+                    TorrentFileの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../http/Http.html">
+            
+                <a href="../http/Http.html">
+            
+                    
+                    Httpサーバーを作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../upnp/Upnp.html">
+            
+                <a href="../upnp/Upnp.html">
+            
+                    
+                    UPnpによるポートマップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../upnp/About.html">
+            
+                <a href="../upnp/About.html">
+            
+                    
+                    UPnPによるポートマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../upnp/Implementation.html">
+            
+                <a href="../upnp/Implementation.html">
+            
+                    
+                    UPnPの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tracker/Tracker.html">
+            
+                <a href="../tracker/Tracker.html">
+            
+                    
+                    Trackerへアクセスしてみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tracker/About.html">
+            
+                <a href="../tracker/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tracker/Http.html">
+            
+                <a href="../tracker/Http.html">
+            
+                    
+                    TrackerはHttpサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tracker/Request.html">
+            
+                <a href="../tracker/Request.html">
+            
+                    
+                    リクエストの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tracker/Response.html">
+            
+                <a href="../tracker/Response.html">
+            
+                    
+                    レスポンスの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../tracker/Test.html">
+            
+                <a href="../tracker/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../client/Client.html">
+            
+                <a href="../client/Client.html">
+            
+                    
+                    ダウンロードゲームへ参加してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../client/About.html">
+            
+                <a href="../client/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../client/DownloadGame.html">
+            
+                <a href="../client/DownloadGame.html">
+            
+                    
+                    ダウンロードゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../client/BlockData.html">
+            
+                <a href="../client/BlockData.html">
+            
+                    
+                    ブロックデーターの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../client/Updater.html">
+            
+                <a href="../client/Updater.html">
+            
+                    
+                    配信用、Peerを作成してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../client/BasicSs.html">
+            
+                <a href="../client/BasicSs.html">
+            
+                    
+                    基本戦術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../client/ChokeImpl.html">
+            
+                <a href="../client/ChokeImpl.html">
+            
+                    
+                    Chokeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../dht/Dht.html">
+            
+                <a href="../dht/Dht.html">
+            
+                    
+                    DHTに対応してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../dht/About.html">
+            
+                <a href="../dht/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../dht/AboutDHT.html">
+            
+                <a href="../dht/AboutDHT.html">
+            
+                    
+                    Tracker無しでPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../dht/kBucket.html">
+            
+                <a href="../dht/kBucket.html">
+            
+                    
+                    KademliaのkBucketを利用している
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../dht/kBucketImpl.html">
+            
+                <a href="../dht/kBucketImpl.html">
+            
+                    
+                    RootingTableを実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../dht/FindNodes.html">
+            
+                <a href="../dht/FindNodes.html">
+            
+                    
+                    FindNodeでネットワークの構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../dht/FindNodesImpl.html">
+            
+                <a href="../dht/FindNodesImpl.html">
+            
+                    
+                    FindNodeを実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../dht/GetPeers.html">
+            
+                <a href="../dht/GetPeers.html">
+            
+                    
+                    GetPeersでInfoHashに対応するPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../dht/Test.html">
+            
+                <a href="../dht/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    [Dartの基礎]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    [なぜDart]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dart/HelloWorld.html">
+            
+                <a href="../dart/HelloWorld.html">
+            
+                    
+                    Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dart/Observatory.html">
+            
+                <a href="../dart/Observatory.html">
+            
+                    
+                    Test/Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../dart/Observatory_GetStarted.html">
+            
+                <a href="../dart/Observatory_GetStarted.html">
+            
+                    
+                    Get started with Observatory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Bencodeの実装</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bencode&#x306E;&#x5B9F;&#x88C5;">Bencode&#x306E;&#x5B9F;&#x88C5;</h1>
+<p><hr>
+<br></p>
+<ul>
+<li><p><strong>Bencoding&#x306F;&#x30D1;&#x30FC;&#x30B9;&#x3057;&#x3084;&#x3059;&#x3044;&#x69CB;&#x9020;</strong></p>
+</li>
+<li><p><strong>BNF&#x304B;&#x3089;&#x6A5F;&#x68B0;&#x7684;&#x306B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x62BD;&#x51FA;</strong></p>
+</li>
+</ul>
+<p><br></p>
+<hr>
+
+<h2 id="&#x898B;&#x6163;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306B;&#x843D;&#x3068;&#x3059;">&#x898B;&#x6163;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306B;&#x843D;&#x3068;&#x3059;</h2>
+<p>Benoding&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;Bencoding&#x3067;&#x6271;&#x3048;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x306F;&#x3001;Number, String, List, Dictionary &#x3067;&#x3057;&#x305F;&#x3002;&#x3053;&#x308C;&#x3089;&#x3092;&#x3001;Dart&#x304B;&#x3089;&#x6271;&#x3048;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;&#x3001;Dart&#x3067;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306B;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;Dart&#x306E;Number,Uint8Array,List,Map&#x3078;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>Bencode&#x306E;Number&#x306F;&#x3001;Dart&#x306E;num&#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;Bencode&#x306E;String&#x306F;&#x3001;UInt8Array&#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;String&#x3067;&#x306A;&#x3044;&#x3068;&#x3053;&#x308D;&#x306F;&#x5C11;&#x3057;&#x30C8;&#x30EA;&#x30C3;&#x30AD;&#x30FC;&#x3067;&#x3059;&#x3002;Bencode&#x3067;&#x306F;&#x3001;&#x30D0;&#x30A4;&#x30C8;&#x914D;&#x5217;&#x3092;&#x6271;&#x3046;&#x3053;&#x3068;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;Unicode&#x3067;&#x306F;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x3082;String&#x3068;&#x3057;&#x3066;&#x6271;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3044;&#x304B;&#x3089;&#x3001;String&#x3067;&#x306A;&#x304F;&#x3001;UInt8Array&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;Bencode&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x306F;&#x3001;Dart&#x8A00;&#x8A9E;&#x306E; List&#x3067;&#x3001;Bencode&#x306E;&#x8F9E;&#x66F8;&#x306F;&#x3001;Dart&#x8A00;&#x8A9E;&#x3067;&#x306F; Map<string, object=""> &#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</string,></p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;API&#x3092;&#x8003;&#x3048;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>class Bencode {
+  static Uint8List encode(Object obj);
+  static Object decode(List&lt;int&gt; buffer);
+}
+</code></pre><p>&#x3082;&#x3061;&#x308D;&#x3093;&#x3001;Bencode&#x306E;&#x5B9F;&#x88C5;&#x306F;&#x898B;&#x6163;&#x308C;&#x305F;&#x5F62;&#x5F0F;&#x306B;&#x843D;&#x3068;&#x3059;&#x65B9;&#x6CD5;&#x3060;&#x3051;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;Bencode&#x306E;String&#x306F;BenString&#x3001;List&#x306F;BenList&#x3001;Dictionary&#x306F;BenDict&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x5C02;&#x7528;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<p>Dart&#x306E; Map &#x306F;&#x3001;Bencode&#x306E;Map&#x3088;&#x308A;&#x3082;&#x6271;&#x3048;&#x308B;&#x7BC4;&#x56F2;&#x304C;&#x5E83;&#x3044;&#x3067;&#x3059;&#x304B;&#x3089;&#x3001;Dart&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x304B;&#x3089;&#x3001;Bencode&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3078;&#x5909;&#x63DB;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x5F62;&#x5F0F;&#x306F;Bencode&#x3067;&#x306F;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<pre><code>int // 0.1 &#x3068;&#x3044;&#x3063;&#x305F;&#x5C11;&#x6570;&#x70B9;&#x3092;&#x542B;&#x3080;&#x5834;&#x5408;
+    // -1&#x3068;&#x3044;&#x3064;&#x305F;&#x30DE;&#x30A4;&#x30CA;&#x30B9;&#x5024;&#x3092;&#x542B;&#x3080;&#x5834;&#x5408;
+
+Map&lt;int, String&gt; // key&#x304C;String&#x3067;&#x306A;&#x3044;&#x5834;&#x5408;
+</code></pre><p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x5236;&#x7D04;&#x304C;&#x3042;&#x308B;&#x4E8B;&#x3092;&#x3001;BenString, BenList &#x3068;&#x3044;&#x3063;&#x305F;&#x69CB;&#x9020;&#x3092;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x4E8B;&#x3067;API&#x3068;&#x3057;&#x3066;&#x8868;&#x73FE;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x4ECA;&#x56DE;&#x306F;&#x300C;&#x898B;&#x6163;&#x308C;&#x305F;&#x69CB;&#x9020;&#x306B;&#x843D;&#x3068;&#x3059;&#x300D;&#x3068;&#x3044;&#x3046;&#x65B9;&#x91DD;&#x3067;&#x8A2D;&#x8A08;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<hr style="page-break-before: always;">
+
+<h2 id="bencode&#x306F;&#x30D1;&#x30FC;&#x30B9;&#x3057;&#x3084;&#x3059;&#x3044;&#x69CB;&#x9020;">Bencode&#x306F;&#x30D1;&#x30FC;&#x30B9;&#x3057;&#x3084;&#x3059;&#x3044;&#x69CB;&#x9020;</h2>
+<p>Bencode &#x306F;&#x30D1;&#x30FC;&#x30B9;&#x304C;&#x5BB9;&#x6613;&#x306A;&#x69CB;&#x9020;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x306A;&#x305C;&#x306A;&#x3089;&#x3070;&#x3001;
+&#x3069;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x306A;&#x306E;&#x304B;&#x304C;&#x3001;&#x6700;&#x521D;&#x306E;&#x4E00;&#x6587;&#x5B57;&#x76EE;&#x3067;&#x5224;&#x5225;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x308B;&#x304B;&#x3089;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x201C;i&#x201D; &#x306A;&#x3089;&#x3070;&#x3001;&#x6574;&#x6570;&#x3002; &#x201C;0123456789&#x201D; &#x306E;&#x3069;&#x308C;&#x304B;&#x306A;&#x3089;&#x3070;&#x3001;&#x6587;&#x5B57;&#x5217;&#x3001;&#x201D;l&#x201D; &#x306A;&#x3089;&#x3070;&#x30EA;&#x30B9;&#x30C8;&#x3001;&#x201D;d&#x201D; &#x306A;&#x3089;&#x3070;&#x8F9E;&#x66F8; &#x3068;&#x3044;&#x3063;&#x305F;&#x611F;&#x3058;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3092;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x76F4;&#x3059;&#x3068;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x611F;&#x3058;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>int index = 0;
+Object decodeBenObject(Uint8List buffer) {
+  if( 0x30 &lt;= buffer[index] &amp;&amp; buffer[index]&lt;=0x39) {//0-9
+    return decodeBytes(buffer);
+  } else if(0x69 == buffer[index]) {// i
+    return decodeNumber(buffer);
+  } else if(0x6c == buffer[index]) {// l
+    return decodeList(buffer);
+  } else if(0x64 == buffer[index]) {// d
+    return decodeDiction(buffer);
+  }
+   throw new ParseError(&quot;benobject&quot;, buffer, index);
+}
+</code></pre><p>&#x898B;&#x3066;&#x306E;&#x901A;&#x308A;&#x3001;&#x5148;&#x982D;&#x306E;&#x5024;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x51E6;&#x7406;&#x304C;&#x5206;&#x5C90;&#x3057;&#x3066;&#x3044;&#x308B;&#x3060;&#x3051;&#x3067;
+&#x3059;&#x3002;&#x5F8C;&#x306F;&#x3001;&#x304A;&#x306E;&#x304A;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3068;&#x307F;&#x306A;&#x3057;&#x3066;&#x3001;&#x5909;&#x63DB;&#x3057;&#x3066;&#x3042;&#x3052;&#x308C;&#x3070;
+&#x5B8C;&#x6210;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="&#x3082;&#x3063;&#x3068;-parser">&#x3082;&#x3063;&#x3068; Parser</h2>
+<p>Torrent&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x306B;&#x3042;&#x305F;&#x308A;&#x3001;&#x3055;&#x307E;&#x3056;&#x307E;&#x306A;&#x30D7;&#x30ED;&#x30C8;&#x30B3;&#x30EB;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x8A00;&#x8A9E;&#x3084;&#x81EA;&#x7136;&#x8A00;&#x8A9E;&#x307B;&#x3069;&#x3001;&#x8907;&#x96D1;&#x3067;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x5BB9;&#x6613;&#x306B;&#x89E3;&#x6790;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x30BF;&#x30A4;&#x30DF;&#x30F3;&#x30B0;&#x3067;BNF&#x3067;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305F;&#x6587;&#x6CD5;&#x3092;&#x89E3;&#x6790;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x89E3;&#x8AAC;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="bnf-&#x304B;&#x3089;&#x6A5F;&#x68B0;&#x7684;&#x306B;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;">BNF &#x304B;&#x3089;&#x6A5F;&#x68B0;&#x7684;&#x306B;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;</h3>
+<p>BNF&#x3067;&#x66F8;&#x304B;&#x308C;&#x305F;&#x69CB;&#x6587;&#x306F;&#x6A5F;&#x68B0;&#x7684;&#x306B;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x304F;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>&#x2022; &#x898F;&#x5247;&#x540D;&#x3092;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x3059;&#x308B;&#x3002;
+&#x2022; &#x30EB;&#x30FC;&#x30EB;&#x306B;&#x6587;&#x5B57;&#x5217;&#x304C;&#x3067;&#x3066;&#x304D;&#x305F;&#x5834;&#x5408;&#x3001;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x304B;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3059;&#x308B;
+&#x2022; &#x30EB;&#x30FC;&#x30EB;&#x306B;&#x898F;&#x5247;&#x304C;&#x3067;&#x3066;&#x304D;&#x305F;&#x5834;&#x5408;&#x3001;&#x305D;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;
+&#x2022; &#x30EB;&#x30FC;&#x30EB;&#x306B;&#x9055;&#x53CD;&#x304B;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;Exception &#x3092;&#x30B9;&#x30ED;&#x30FC;&#x3059;&#x308B;&#x3002;
+</code></pre><p>&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x8A00;&#x8A9E;&#x3001;&#x81EA;&#x7136;&#x8A00;&#x8A9E;&#x3068;&#x3044;&#x3063;&#x305F;&#x3082;&#x306E;&#x306F;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x5DE5;&#x592B;&#x304C;&#x5FC5;
+&#x8981;&#x3067;&#x3059;&#x304C;&#x3001;&#x4ECA;&#x56DE;&#x306F;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306A;&#x30EB;&#x30FC;&#x30EB;&#x3092;&#x5B88;&#x308B;&#x3060;&#x3051;&#x3067;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x307E;
+&#x3059;&#x3002;&#x3082;&#x3046;&#x5C11;&#x3057;&#x8A73;&#x7D30;&#x306A;&#x60C5;&#x5831;&#x304C;&#x6B32;&#x3057;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x300C;Language Implementation Patterns &#x300D;&#x3068;&#x3044;&#x3046;&#x672C;&#x3092;&#x8AAD;&#x3080;&#x4E8B;&#x3092;&#x304A;&#x52E7;&#x3081;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x5177;&#x4F53;&#x7684;&#x306B;&#x3001;Bencode &#x7528;&#x306E;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x898B;&#x3066;&#x3044;&#x304D;&#x307E;
+&#x3057;&#x3087;&#x3046;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;Dictionary &#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3051;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>Map decodeDiction(data.Uint8List buffer) {
+  if(buffer[index++] != 0x64) {
+    throw new ParseError(&quot;bendiction&quot;, buffer, index);
+  }
+  Map ret = decodeDictionElements(buffer);
+  if(buffer[index++] != 0x65) {
+    throw new ParseError(&quot;bendiction&quot;, buffer, index);
+  }
+  return ret;
+}
+</code></pre><p>BNF&#x3068;&#x4E00;&#x5BFE;&#x4E00;&#x306E;&#x95A2;&#x4FC2;&#x304C;&#x3042;&#x308B;&#x4E8B;&#x304C;&#x89E3;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;Dictionary &#x306F;
+27
+&#x300C; &#x201C;d&#x201D; bendictionelements &#x201C;e&#x201D;&#x300D;&#x3068;&#x6587;&#x6CD5;&#x3067;&#x8868;&#x73FE;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3067;&#x3059;&#x304B;
+&#x3089;&#x3001;&#x201D;d&#x201D;&#x3068;&#x3044;&#x3046;&#x6587;&#x5B57;&#x304B;&#x78BA;&#x8A8D;&#x3002;&#x3000;dictionelements &#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x547C;
+&#x3073;&#x51FA;&#x3059;&#x3002;&#x201C;e&#x201D;&#x3068;&#x3044;&#x3046;&#x6587;&#x5B57;&#x304B;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3002;&#x3000;&#x30EB;&#x30FC;&#x30EB;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;">&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304F;</h2>
+<p>&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304D;&#x306A;&#x304C;&#x3089;&#x3001;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x307E;&#x305A;&#x306F;
+&#x6574;&#x6570;&#x304B;&#x3089;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>unit.test(&quot;bencode: number&quot;, () {
+  num ret = hetima.Bencode.decode(toBuffer(&quot;i1024e&quot;));
+  unit.expect(1024, ret);
+});
+</code></pre><p>&#x3053;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x6E80;&#x305F;&#x3059;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x304D;&#x307E;&#x3059;&#x3002;bencoding&#x3067;&#x6574;&#x6570;&#x306F;&#x3001;
+&#x300C;&#x201C;i&#x201D; *(0-9) &#x201C;e&#x201D;&#x300D;&#x3068;&#x66F8;&#x3051;&#x307E;&#x3059;&#x3002;&#x306A;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x3082;&#x30EB;
+&#x30FC;&#x30EB;&#x306B;&#x5F93;&#x3063;&#x3066;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3051;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>num decodeNumber(data.Uint8List buffer) {
+  if(buffer[index++] != 0x69) {
+    throw new ParseError(&quot;bennumber&quot;, buffer, index);
+  }
+  int returnValue = 0;
+  while(index&lt;buffer.length &amp;&amp; buffer[index] != 0x65) {
+    if(!(0x30 &lt;= buffer[index] &amp;&amp; buffer[index]&lt;=0x39)) {
+      throw new ParseError(&quot;bennumber&quot;, buffer, index);
+    }
+    returnValue = returnValue*10+(buffer[index++]-0x30);
+  }
+  if(buffer[index++] != 0x65) {
+    throw new ParseError(&quot;bennumber&quot;, buffer, index);
+  }
+  return returnValue;
+}
+</code></pre><p>&#x6570;&#x5B57;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3059;&#x90E8;&#x5206;&#x304C;&#x5C11;&#x3057;&#x8907;&#x96D1;&#x3067;&#x3059;&#x304C;&#x3001;&#x7121;&#x4E8B;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x901A;&#x308B;&#x30B3;&#x30FC;
+&#x30C9;&#x304C;&#x304B;&#x3051;&#x307E;&#x3057;&#x305F;&#x3002;&#x3053;&#x306E;&#x8ABF;&#x5B50;&#x3067;&#x3001;&#x6587;&#x5B57;&#x5217;&#x3001;&#x30EA;&#x30B9;&#x30C8;&#x3001;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;
+&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x4F5C;&#x6210;&#x3059;&#x308C;&#x3070;&#x5B8C;&#x6210;&#x3067;&#x3059;&#x3002;kyorohiro&#x304C;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x7269;
+&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x300C;<a href="https://github.com/kyorohiro/dart_hetimatorrent&#x300D;" target="_blank">https://github.com/kyorohiro/dart_hetimatorrent&#x300D;</a> &#x4E8B;&#x306E;&#x985B;&#x672B;&#x3092;&#x77E5;&#x308A;&#x305F;&#x3044;&#x65B9;&#x306F;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<hr>
+<p>Kyorohiro work</p>
+<p><a href="http://kyorohiro.strikingly.com" target="_blank">http://kyorohiro.strikingly.com</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Bencode.html" class="navigation navigation-prev " aria-label="Previous page: Bencode">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Content.html" class="navigation navigation-next " aria-label="Next page: TorrentFileの中身">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Bencodeの実装","level":"1.3.3","depth":2,"next":{"title":"TorrentFileの中身","level":"1.3.4","depth":2,"path":"torrentfile/Content.md","ref":"torrentfile/Content.md","articles":[]},"previous":{"title":"Bencode","level":"1.3.2","depth":2,"path":"torrentfile/Bencode.md","ref":"torrentfile/Bencode.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid","mathjax"],"pluginsConfig":{"mermaid":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"torrentfile/Implementation.md","mtime":"2017-08-29T17:26:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:35:04.327Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

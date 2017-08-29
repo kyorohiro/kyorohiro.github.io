@@ -1,0 +1,914 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>UPnPによるポートマップ · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Implementation.html" />
+    
+    
+    <link rel="prev" href="Upnp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/Intro.html">
+            
+                <a href="../intro/Intro.html">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/Introduction.html">
+            
+                <a href="../intro/Introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/About.html">
+            
+                <a href="../intro/About.html">
+            
+                    
+                    Torrentとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/Goal.html">
+            
+                <a href="../intro/Goal.html">
+            
+                    
+                    ゴール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../torrentfile/Torrentfile.html">
+            
+                <a href="../torrentfile/Torrentfile.html">
+            
+                    
+                    Torrentファイルを読み込む
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../torrentfile/About.html">
+            
+                <a href="../torrentfile/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../torrentfile/Bencode.html">
+            
+                <a href="../torrentfile/Bencode.html">
+            
+                    
+                    Bencode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../torrentfile/Implementation.html">
+            
+                <a href="../torrentfile/Implementation.html">
+            
+                    
+                    Bencodeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../torrentfile/Content.html">
+            
+                <a href="../torrentfile/Content.html">
+            
+                    
+                    TorrentFileの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../http/Http.html">
+            
+                <a href="../http/Http.html">
+            
+                    
+                    Httpサーバーを作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Upnp.html">
+            
+                <a href="Upnp.html">
+            
+                    
+                    UPnpによるポートマップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    UPnPによるポートマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Implementation.html">
+            
+                <a href="Implementation.html">
+            
+                    
+                    UPnPの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tracker/Tracker.html">
+            
+                <a href="../tracker/Tracker.html">
+            
+                    
+                    Trackerへアクセスしてみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tracker/About.html">
+            
+                <a href="../tracker/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tracker/Http.html">
+            
+                <a href="../tracker/Http.html">
+            
+                    
+                    TrackerはHttpサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tracker/Request.html">
+            
+                <a href="../tracker/Request.html">
+            
+                    
+                    リクエストの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tracker/Response.html">
+            
+                <a href="../tracker/Response.html">
+            
+                    
+                    レスポンスの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../tracker/Test.html">
+            
+                <a href="../tracker/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../client/Client.html">
+            
+                <a href="../client/Client.html">
+            
+                    
+                    ダウンロードゲームへ参加してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../client/About.html">
+            
+                <a href="../client/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../client/DownloadGame.html">
+            
+                <a href="../client/DownloadGame.html">
+            
+                    
+                    ダウンロードゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../client/BlockData.html">
+            
+                <a href="../client/BlockData.html">
+            
+                    
+                    ブロックデーターの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../client/Updater.html">
+            
+                <a href="../client/Updater.html">
+            
+                    
+                    配信用、Peerを作成してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../client/BasicSs.html">
+            
+                <a href="../client/BasicSs.html">
+            
+                    
+                    基本戦術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../client/ChokeImpl.html">
+            
+                <a href="../client/ChokeImpl.html">
+            
+                    
+                    Chokeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../dht/Dht.html">
+            
+                <a href="../dht/Dht.html">
+            
+                    
+                    DHTに対応してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../dht/About.html">
+            
+                <a href="../dht/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../dht/AboutDHT.html">
+            
+                <a href="../dht/AboutDHT.html">
+            
+                    
+                    Tracker無しでPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../dht/kBucket.html">
+            
+                <a href="../dht/kBucket.html">
+            
+                    
+                    KademliaのkBucketを利用している
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../dht/kBucketImpl.html">
+            
+                <a href="../dht/kBucketImpl.html">
+            
+                    
+                    RootingTableを実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../dht/FindNodes.html">
+            
+                <a href="../dht/FindNodes.html">
+            
+                    
+                    FindNodeでネットワークの構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../dht/FindNodesImpl.html">
+            
+                <a href="../dht/FindNodesImpl.html">
+            
+                    
+                    FindNodeを実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../dht/GetPeers.html">
+            
+                <a href="../dht/GetPeers.html">
+            
+                    
+                    GetPeersでInfoHashに対応するPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../dht/Test.html">
+            
+                <a href="../dht/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    [Dartの基礎]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    [なぜDart]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dart/HelloWorld.html">
+            
+                <a href="../dart/HelloWorld.html">
+            
+                    
+                    Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dart/Observatory.html">
+            
+                <a href="../dart/Observatory.html">
+            
+                    
+                    Test/Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../dart/Observatory_GetStarted.html">
+            
+                <a href="../dart/Observatory_GetStarted.html">
+            
+                    
+                    Get started with Observatory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >UPnPによるポートマップ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="upnp&#x306B;&#x3088;&#x308B;&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D7;">UPnp&#x306B;&#x3088;&#x308B;&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D7;</h1>
+<p><hr>
+<br></p>
+<ul>
+<li><p><strong>Nat&#x3092;&#x8D8A;&#x3048;&#x306A;&#x3044;&#x3068;P2P&#x901A;&#x4FE1;&#x3067;&#x304D;&#x306A;&#x3044;</strong></p>
+</li>
+<li><p><strong>UPnP&#x3092;&#x4F7F;&#x3048;&#x3070;&#x3001;TCP&#x3067;&#x3082;Nat&#x8D8A;&#x3048;&#x304C;&#x3067;&#x304D;&#x308B;</strong></p>
+</li>
+</ul>
+<p><br></p>
+<hr>
+
+<p>Socket&#x3092;&#x4F7F;&#x3046;&#x4E8B;&#x3067;&#x7C21;&#x5358;&#x306B;&#x3001;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x3092;&#x5229;&#x7528;&#x3057;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x30D7;&#x30E9;&#x30A6;&#x30B6;&#x30FC;&#x3068;&#x304B;&#x30E1;&#x30FC;&#x30E9;&#x30FC;&#x3068;&#x304B;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;P2P&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x3082;&#x3046;&#x4E00;&#x3064;&#x8003;&#x616E;&#x3057;&#x306A;&#x304F;&#x3066;&#x306F;&#x306A;&#x3089;&#x306A;&#x3044;&#x4E8B;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x305D;&#x308C;&#x304C;&#x3001;&#x300C;Nat&#x8D8A;&#x3048;&#x300D;&#x3067;&#x3059;&#x3002;</p>
+<p>P2P&#x30A2;&#x30D7;&#x30EA;&#x3068;&#x3057;&#x3066;&#x3001;&#x5FC5;&#x305A;&#x6E80;&#x305F;&#x3055;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x3089;&#x306A;&#x3044;&#x6761;&#x4EF6;&#x306F;&#x3001;&#x4F55;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F; &#x305D;&#x308C;&#x306F;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x304C;&#x6240;&#x6709;&#x3059;&#x308B;&#x7AEF;&#x672B;&#x540C;&#x58EB;&#x304C;&#x76F4;&#x63A5;&#x30C7;&#x30FC;&#x30BF;&#x901A;&#x4FE1;&#x3092;&#x3067;&#x304D;&#x308B;&#x4E8B;&#x3067;&#x3059;&#x3002;P2P&#x306E;&#x5B9A;&#x7FA9;&#x305D;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x306D;&#x3002;
+&#x3053;&#x308C;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p>Nat&#x8D8A;&#x3048;&#x3092;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306F;&#x3044;&#x304F;&#x3064;&#x304B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x672C;&#x7AE0;&#x3067;&#x306F;&#x3001;UPnP&#x3092;&#x7528;&#x3044;&#x3066;Nat&#x8D8A;&#x3048;&#x3092;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x89E3;&#x8AAC;&#x3057;&#x305F;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<hr style="page-break-before: always;">
+
+<h2 id="global-ip-&#x304C;&#x5FC5;&#x8981;">Global IP &#x304C;&#x5FC5;&#x8981;</h2>
+<p>P2P&#x901A;&#x4FE1;&#x3059;&#x308B;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;&#x3001;&#x76F8;&#x624B;&#x306B;&#x81EA;&#x5206;&#x306E;&#x300C;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;&#x3068;&#x300C;Port&#x756A;&#x53F7;&#x300D;&#x3092;&#x6559;&#x3048;&#x308B;&#x3002;&#x5FC5;&#x8981;&#x304C;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;Nat&#x8D8A;&#x3048;&#x306E;&#x554F;&#x984C;&#x3092;&#x89E3;&#x6C7A;&#x3057;&#x306A;&#x3044;&#x3068;&#x3001;&#x3053;&#x308C;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p>&#x3054;&#x5BB6;&#x5EAD;&#x304B;&#x3089;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x3068;&#x3044;&#x3046;&#x30C7;&#x30D0;&#x30A4;&#x30B9;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306F;&#x3001;&#x30EB;&#x30FC;&#x30BF;&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x3044;&#x308B;&#x7AEF;&#x672B;&#x306B; &#x300C;Private IP&#x300D; &#x3092;&#x5272;&#x308A;&#x632F;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>&gt;&gt; netstat
+</code></pre><p>&#x3068;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x300C;192.168.100.1&#x300D;&#x3068;&#x3044;&#x3063;&#x305F;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x304C;&#x7AEF;&#x672B;&#x306B;&#x5272;&#x308A;&#x632F;&#x3089;&#x308C;&#x3066;&#x3044;&#x308B;&#x4E8B;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x76F8;&#x624B;&#x306B;&#x4F1D;&#x3048;&#x3066;&#x3082;&#x3001;&#x901A;&#x4FE1;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<h3 id="&#x30EB;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x304A;&#x3046;">&#x30EB;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x304A;&#x3046;</h3>
+<p>&#x3057;&#x304B;&#x3057;&#x3001;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x304B;&#x3089;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x306B;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x3068;&#x3044;&#x3046;&#x4E8B;&#x306F;&#x3001;&#x300C;Global IP&#x300D;&#x3092;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306F;&#x6301;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3089;&#x901A;&#x4FE1;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;&#x3064;&#x307E;&#x308A;&#x3001;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306F;&#x300C;Global IP&#x300D;&#x3092;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306F;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308B;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x7AEF;&#x672B;&#x306F;&#x300C;Global IP&#x300D;&#x3092;&#x3057;&#x3089;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x554F;&#x984C;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="upnp&#x3092;&#x7528;&#x3044;&#x3066;port-mapping&#x3092;&#x3057;&#x3088;&#x3046;">UPnP&#x3092;&#x7528;&#x3044;&#x3066;Port Mapping&#x3092;&#x3057;&#x3088;&#x3046;</h2>
+<p>UPNP&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;UDP&#x3068;TCP&#x3092;&#x7528;&#x3044;&#x3066;&#x901A;&#x4FE1;&#x3067;&#x304D;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;&#x3001;</p>
+<ul>
+<li>UDP Multicast &#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3001;&#x4F7F;&#x7528;&#x4E2D;&#x306E;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306B;&#x3001;&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;&#x3092;&#x4F9D;&#x983C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;&#x3002;</li>
+<li>TCP &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3063;&#x305F;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x304B;&#x3089;&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;&#x306E;&#x4F9D;&#x983C;&#x3092;&#x3060;&#x3059;&#x3002;</li>
+</ul>
+<p>&#x3068;&#x3044;&#x3063;&#x305F;&#x4E8B;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;&#x5B9F;&#x969B;&#x306B;Try&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="&#x4F9D;&#x983C;&#x5148;&#x3092;&#x8ABF;&#x3079;&#x308B;">&#x4F9D;&#x983C;&#x5148;&#x3092;&#x8ABF;&#x3079;&#x308B;</h3>
+<p>UDP&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x901A;&#x77E5;&#x3059;&#x308B;</p>
+<pre><code>M-SEARCH * HTTP/1.1
+MX: 3
+HOST: 239.255.255.250:1900
+MAN: &quot;ssdp:discover&quot;
+ST: urn:schemas-upnp-org:service:WANIPConnection:1
+</code></pre><p>&#x3082;&#x3057;&#x3082;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8FD4;&#x7B54;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+ST: urn:schemas-upnp-org:service:WANIPConnection:1
+USN: uuid:E8088BD3-E808-8BD3-A042-E8088BD3A042::urn:schemas-upnp-org:service:WANIPConnection:1
+EXT:
+SERVER: E588 UPnP/1.0 MiniUPnPd/1.6
+LOCATION: http://192.168.100.1:54616/rootDesc.xml
+OPT: &quot;http://schemas.upnp.org/upnp/1/0/&quot;; ns=01
+01-NLS: 1
+BOOTID.UPNP.ORG: 1
+CONFIGID.UPNP.ORG: 1337
+DATE: Sun, 14 Sep 2014 00:42:14 GMT
+</code></pre><p>LOCATION&#x3067;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306E;XML&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;<controlurl>&#x30BF;&#x30B0;&#x306E;&#x4E2D;&#x306B;&#x4F9D;&#x983C;&#x5148;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x304C;&#x8A18;&#x8F09;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3078;&#x4F9D;&#x983C;&#x3092;&#x3060;&#x305B;&#x3070;&#x3001;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x304B;&#x3089;&#x3001;&#x3042;&#x306A;&#x305F;&#x306E;&#x7AEF;&#x672B;&#x3078;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</controlurl></p>
+<h3 id="&#x5916;&#x90E8;&#x306E;&#x7AEF;&#x672B;&#x304B;&#x3089;&#x898B;&#x3048;&#x3066;&#x3044;&#x308B;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x805E;&#x304F;">&#x5916;&#x90E8;&#x306E;&#x7AEF;&#x672B;&#x304B;&#x3089;&#x898B;&#x3048;&#x3066;&#x3044;&#x308B;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x805E;&#x304F;</h3>
+<pre><code>POST 192.168.100.1 HTTP/1.1
+Host: 192.168.100.1
+Connection: close
+SOAPACTION: &quot;urn:schemas-upnp-org:service:WANIPConnection:1#GetExternalIPAddress&quot;
+Content-Length: 324
+</code></pre><p>&#x6210;&#x529F;&#x3059;&#x308B;&#x3068;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8FD4;&#x4FE1;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=&quot;utf-8&quot;
+Connection: close
+Content-Length: 360
+Server: E588 UPnP/1.0 MiniUPnPd/1.6
+EXT:
+DATE: Sun, 14 Sep 2014 01:46:07 GMT
+</code></pre><h3 id="&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;&#x306E;&#x4F9D;&#x983C;&#x3092;&#x3060;&#x3059;">&#x30DD;&#x30FC;&#x30C8;&#x30DE;&#x30C3;&#x30D4;&#x30F3;&#x30B0;&#x306E;&#x4F9D;&#x983C;&#x3092;&#x3060;&#x3059;</h3>
+<pre><code>POST 192.168.100.1 HTTP/1.1
+Host: 192.168.100.1
+Connection: close
+SOAPACTION: &quot;urn:schemas-upnp-org:service:WANIPConnection:1#AddPortMapping&quot;
+Content-Length: 629
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV:=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; SOAP-ENV:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;
+&lt;SOAP-ENV:Body&gt;&lt;m:AddPortMapping xmlns:m=&quot;urn:schemas-upnp-org:service:WANIPConnection:1&quot;&gt;
+&lt;NewRemoteHost&gt;&lt;/NewRemoteHost&gt;
+&lt;NewExternalPort&gt;48083&lt;/NewExternalPort&gt;
+&lt;NewProtocol&gt;TCP&lt;/NewProtocol&gt;
+&lt;NewInternalPort&gt;8083&lt;/NewInternalPort&gt;
+&lt;NewInternalClient&gt;192.168.100.100&lt;/NewInternalClient&gt;
+&lt;NewEnabled&gt;1&lt;/NewEnabled&gt;
+&lt;NewPortMappingDescription&gt;test&lt;/NewPortMappingDescription&gt;
+&lt;NewLeaseDuration&gt;0&lt;/NewLeaseDuration&gt;
+&lt;/m:AddPortMapping&gt;&lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</code></pre><pre><code>HTTP/1.1 200 OK
+Content-Type: text/xml; charset=&quot;utf-8&quot;
+Connection: close
+Content-Length: 263
+Server: E588 UPnP/1.0 MiniUPnPd/1.6
+EXT:
+DATE: Sun, 14 Sep 2014 01:39:27 GMT
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;s:Envelope xmlns:s=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; s:encodingStyle=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot;&gt;
+&lt;s:Body&gt;
+&lt;u:AddPortMappingResponse xmlns:u=&quot;urn:schemas-upnp-org:service:WANIPConnection:1&quot;/&gt;
+&lt;/s:Body&gt;
+&lt;/s:Envelope&gt;
+</code></pre><hr>
+<p>Kyorohiro work</p>
+<p><a href="http://kyorohiro.strikingly.com" target="_blank">http://kyorohiro.strikingly.com</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Upnp.html" class="navigation navigation-prev " aria-label="Previous page: UPnpによるポートマップ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Implementation.html" class="navigation navigation-next " aria-label="Next page: UPnPの実装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"UPnPによるポートマップ","level":"1.5.1","depth":2,"next":{"title":"UPnPの実装","level":"1.5.2","depth":2,"path":"upnp/Implementation.md","ref":"upnp/Implementation.md","articles":[]},"previous":{"title":"UPnpによるポートマップ","level":"1.5","depth":1,"path":"upnp/Upnp.md","ref":"upnp/Upnp.md","articles":[{"title":"UPnPによるポートマップ","level":"1.5.1","depth":2,"path":"upnp/About.md","ref":"upnp/About.md","articles":[]},{"title":"UPnPの実装","level":"1.5.2","depth":2,"path":"upnp/Implementation.md","ref":"upnp/Implementation.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid","mathjax"],"pluginsConfig":{"mermaid":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"upnp/About.md","mtime":"2017-08-29T17:26:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:35:04.327Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

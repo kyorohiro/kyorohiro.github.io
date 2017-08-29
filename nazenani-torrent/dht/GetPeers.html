@@ -1,0 +1,876 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GetPeersでInfoHashに対応するPeerを探す · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Test.html" />
+    
+    
+    <link rel="prev" href="FindNodesImpl.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/Intro.html">
+            
+                <a href="../intro/Intro.html">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/Introduction.html">
+            
+                <a href="../intro/Introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/About.html">
+            
+                <a href="../intro/About.html">
+            
+                    
+                    Torrentとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/Goal.html">
+            
+                <a href="../intro/Goal.html">
+            
+                    
+                    ゴール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../torrentfile/Torrentfile.html">
+            
+                <a href="../torrentfile/Torrentfile.html">
+            
+                    
+                    Torrentファイルを読み込む
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../torrentfile/About.html">
+            
+                <a href="../torrentfile/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../torrentfile/Bencode.html">
+            
+                <a href="../torrentfile/Bencode.html">
+            
+                    
+                    Bencode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../torrentfile/Implementation.html">
+            
+                <a href="../torrentfile/Implementation.html">
+            
+                    
+                    Bencodeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../torrentfile/Content.html">
+            
+                <a href="../torrentfile/Content.html">
+            
+                    
+                    TorrentFileの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../http/Http.html">
+            
+                <a href="../http/Http.html">
+            
+                    
+                    Httpサーバーを作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../upnp/Upnp.html">
+            
+                <a href="../upnp/Upnp.html">
+            
+                    
+                    UPnpによるポートマップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../upnp/About.html">
+            
+                <a href="../upnp/About.html">
+            
+                    
+                    UPnPによるポートマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../upnp/Implementation.html">
+            
+                <a href="../upnp/Implementation.html">
+            
+                    
+                    UPnPの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tracker/Tracker.html">
+            
+                <a href="../tracker/Tracker.html">
+            
+                    
+                    Trackerへアクセスしてみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tracker/About.html">
+            
+                <a href="../tracker/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tracker/Http.html">
+            
+                <a href="../tracker/Http.html">
+            
+                    
+                    TrackerはHttpサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tracker/Request.html">
+            
+                <a href="../tracker/Request.html">
+            
+                    
+                    リクエストの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tracker/Response.html">
+            
+                <a href="../tracker/Response.html">
+            
+                    
+                    レスポンスの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../tracker/Test.html">
+            
+                <a href="../tracker/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../client/Client.html">
+            
+                <a href="../client/Client.html">
+            
+                    
+                    ダウンロードゲームへ参加してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../client/About.html">
+            
+                <a href="../client/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../client/DownloadGame.html">
+            
+                <a href="../client/DownloadGame.html">
+            
+                    
+                    ダウンロードゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../client/BlockData.html">
+            
+                <a href="../client/BlockData.html">
+            
+                    
+                    ブロックデーターの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../client/Updater.html">
+            
+                <a href="../client/Updater.html">
+            
+                    
+                    配信用、Peerを作成してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../client/BasicSs.html">
+            
+                <a href="../client/BasicSs.html">
+            
+                    
+                    基本戦術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../client/ChokeImpl.html">
+            
+                <a href="../client/ChokeImpl.html">
+            
+                    
+                    Chokeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Dht.html">
+            
+                <a href="Dht.html">
+            
+                    
+                    DHTに対応してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="AboutDHT.html">
+            
+                <a href="AboutDHT.html">
+            
+                    
+                    Tracker無しでPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="kBucket.html">
+            
+                <a href="kBucket.html">
+            
+                    
+                    KademliaのkBucketを利用している
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="kBucketImpl.html">
+            
+                <a href="kBucketImpl.html">
+            
+                    
+                    RootingTableを実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="FindNodes.html">
+            
+                <a href="FindNodes.html">
+            
+                    
+                    FindNodeでネットワークの構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="FindNodesImpl.html">
+            
+                <a href="FindNodesImpl.html">
+            
+                    
+                    FindNodeを実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.7" data-path="GetPeers.html">
+            
+                <a href="GetPeers.html">
+            
+                    
+                    GetPeersでInfoHashに対応するPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="Test.html">
+            
+                <a href="Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    [Dartの基礎]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    [なぜDart]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dart/HelloWorld.html">
+            
+                <a href="../dart/HelloWorld.html">
+            
+                    
+                    Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dart/Observatory.html">
+            
+                <a href="../dart/Observatory.html">
+            
+                    
+                    Test/Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../dart/Observatory_GetStarted.html">
+            
+                <a href="../dart/Observatory_GetStarted.html">
+            
+                    
+                    Get started with Observatory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GetPeersでInfoHashに対応するPeerを探す</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="getpeers&#x3067;infohash&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;peer&#x3092;&#x63A2;&#x3059;">GetPeers&#x3067;InfoHash&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;Peer&#x3092;&#x63A2;&#x3059;</h1>
+<p><hr></p>
+<ul>
+<li><strong>GetPeers&#x3067;Peer&#x3092;&#x63A2;&#x3059;</strong>
+<br></li>
+<li><strong>AnnouncePeer&#x3067;P2P&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x4E0A;&#x306B;&#x5024;&#x3092;&#x4FDD;&#x5B58;&#x3059;&#x308B;</strong>
+<br><hr>
+
+</li>
+</ul>
+<p>&#x524D;&#x7AE0;&#x3067;P2P&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;&#x672C;&#x7AE0;&#x3067;&#x306F;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;P2P&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306B;&#x3064;&#x3044;&#x3066;&#x89E3;&#x8AAC;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="getpeer&#x3067;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x3068;findnode&#x306F;&#x307B;&#x3068;&#x3093;&#x3069;&#x540C;&#x3058;&#x3002;">GetPeer&#x3067;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x3068;FindNode&#x306F;&#x307B;&#x3068;&#x3093;&#x3069;&#x540C;&#x3058;&#x3002;</h2>
+<p>MainLine DHT &#x3067;&#x306F;GetPeers&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6240;&#x6301;&#x3057;&#x3066;&#x3044;&#x308B;Peer&#x3092;&#x63A2;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>GetPeer&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x300C;&#x6307;&#x5B9A;&#x3057;&#x3066;KID&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6240;&#x6301;&#x3057;&#x3066;&#x3044;&#x308B;Peer&#x3092;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x305D;&#x306E;Peer&#x306B;&#x3064;&#x3044;&#x3066;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;&#x300D;&#x3001;&#x3082;&#x3057;&#x3082;&#x77E5;&#x3063;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x3082;&#x3063;&#x3068;&#x3082;&#x8FD1;&#x3044;Peer&#x3092;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;&#x3002;&#x3068;&#x3044;&#x3063;&#x305F;&#x4E8B;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x64CD;&#x4F5C;&#x3092;&#x4F55;&#x5EA6;&#x3082;&#x7E70;&#x308A;&#x8FD4;&#x3059;&#x4E8B;&#x3067;&#x3001;KID&#x3068;&#x3082;&#x3063;&#x3068;&#x3082;&#x8FD1;&#x304F;&#x306B;&#x3042;&#x308B;Node&#x3092;&#x767A;&#x898B;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x306F;&#x3001;&#x307B;&#x3068;&#x3093;&#x3069;&#x3001;FinddNodes&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306A;&#x52D5;&#x4F5C;&#x3067;&#x3059;&#x306D;&#x3002;</p>
+<ul>
+<li>KID&#x306E;&#x8FD1;&#x3044;Peer&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x3066;&#x3082;&#x3089;&#x3046;&#x306E;&#x304C;&#x540C;&#x3058;</li>
+<li>&#x306A;&#x3093;&#x3069;&#x3082;&#x3001;&#x9001;&#x4FE1;&#x3068;&#x53D7;&#x4FE1;&#x3092;&#x7E70;&#x308A;&#x8FD4;&#x3059;&#x306E;&#x304C;&#x540C;&#x3058;</li>
+</ul>
+<p>&#x5B9F;&#x88C5;&#x3082;&#x307B;&#x3068;&#x3093;&#x3069;&#x540C;&#x3058;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="announcepeer&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B;">AnnouncePeer&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8A18;&#x9332;&#x3059;&#x308B;</h2>
+<p>GetPeer&#x3092;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x3066;&#x3001;&#x4E0A;&#x4F4D;K&#x500B;&#x306E;Node&#x304C;&#x56FA;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x3089;&#x3001;AnnounePeer&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8A18;&#x9332;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>K&#x500B;&#x306E;Node&#x3078;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8A18;&#x9332;&#x3092;&#x4F9D;&#x983C;&#x3057;&#x307E;&#x3059;&#x3002;&#x8907;&#x6570;&#x306E;Peer&#x3078;&#x4F9D;&#x983C;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x5805;&#x7262;&#x6027;&#x304C;&#x9AD8;&#x307E;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x767A;&#x898B;&#x3055;&#x308C;&#x3084;&#x3059;&#x304F;&#x306A;&#x308B;</li>
+<li>&#x767B;&#x9332;&#x3057;&#x305F;Peer&#x304C;&#x96E2;&#x8131;&#x3057;&#x3066;&#x3082;&#x5927;&#x4E08;&#x592B;</li>
+<li>&#x767B;&#x9332;&#x3057;&#x305F;Peer&#x306E;&#x8CA0;&#x8377;&#x3092;&#x5206;&#x6563;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<h2 id="&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x69CB;&#x6210;">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x69CB;&#x6210;</h2>
+<pre><code>arguments:  
+{
+  &quot;t&quot;:&quot;aa&quot;,
+  &quot;y&quot;:&quot;q&quot;,
+  &quot;q&quot;:&quot;get_peers&quot;, 
+  &quot;a&quot;: {
+    &quot;id&quot; : &quot;&lt;querying nodes id&gt;&quot;, 
+    &quot;info_hash&quot; : &quot;&lt;20-byte infohash of target torrent&gt;&quot;
+  }
+}
+
+response: have value
+{
+  &quot;id&quot; : &quot;&lt;queried nodes id&gt;&quot;,
+  &quot;token&quot; :&quot;&lt;opaque write token&gt;&quot;,
+  &quot;values&quot; : 
+  [&quot;&lt;peer 1 info string&gt;&quot;, &quot;&lt;peer 2 info string&gt;&quot;]
+}
+
+response: have node info
+{
+ &quot;t&quot;:&quot;aa&quot;,
+ &quot;y&quot;:&quot;r&quot;,
+ &quot;r&quot;: {
+  &quot;id&quot; : &quot;&lt;queried nodes id&gt;&quot;,
+  &quot;token&quot; :&quot;&lt;opaque write token&gt;&quot;,
+  &quot;nodes&quot; : &quot;&lt;compact node info&gt;&quot;
+  }
+}
+</code></pre><p>FindNode&#x3068;&#x307B;&#x3068;&#x3093;&#x3069;&#x540C;&#x3058;&#x3067;&#x3059;&#x306D;&#x3002;&#x672C;&#x66F8;&#x3067;&#x306F;&quot;token&quot;&#x3068;&quot;values&quot;&#x304C;&#x521D;&#x3081;&#x3066;&#x51FA;&#x3066;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<p>&quot;token&quot; &#x306F;&#x3001;&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;&#x5074;&#x306B;&#x81EA;&#x7531;&#x306B;&#x6C7A;&#x3081;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x30D0;&#x30A4;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3067;&#x3059;&#x3002;AnnouncePeer&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x6642;&#x306B;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x30D0;&#x30A4;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x30B5;&#x30A4;&#x30BA;&#x3082;&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x3092;&#x8FD4;&#x3059;&#x5074;&#x306E;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x7570;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&quot;value&quot; &#x306F;&#x3001;6&#x30D0;&#x30A4;&#x30C8;&#x306E;&#x30C7;&#x30FC;&#x30BF;[<ip 4bute=""> ,<port 2byte="">]&#x3092;List&#x5F62;&#x5F0F;&#x3067;&#x3001;&#x8907;&#x6570;&#x500B;&#x683C;&#x7D0D;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</port></ip></p>
+<p>ref <a href="http://www.bittorrent.org/beps/bep_0005.html" target="_blank">http://www.bittorrent.org/beps/bep_0005.html</a></p>
+<h2 id="&#x5B9F;&#x88C5;&#x306B;&#x3064;&#x3044;&#x3066;">&#x5B9F;&#x88C5;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
+<p>findNode&#x3067;&#x89E3;&#x8AAC;&#x3057;&#x305F;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;findNode&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x305F;&#x30CE;&#x30A6;&#x30CF;&#x30A6;&#x3067;&#x305D;&#x306E;&#x307E;&#x307E;getPeers&#x3082;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x306A;&#x306E;&#x3067;&#x3001;&#x7279;&#x5225;&#x3001;&#x89E3;&#x8AAC;&#x3059;&#x308B;&#x30DA;&#x30FC;&#x30B8;&#x3092;&#x3055;&#x304B;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<hr>
+<p>Kyorohiro work</p>
+<p><a href="http://kyorohiro.strikingly.com" target="_blank">http://kyorohiro.strikingly.com</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FindNodesImpl.html" class="navigation navigation-prev " aria-label="Previous page: FindNodeを実装">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Test.html" class="navigation navigation-next " aria-label="Next page: テスト">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GetPeersでInfoHashに対応するPeerを探す","level":"1.8.7","depth":2,"next":{"title":"テスト","level":"1.8.8","depth":2,"path":"dht/Test.md","ref":"dht/Test.md","articles":[]},"previous":{"title":"FindNodeを実装","level":"1.8.6","depth":2,"path":"dht/FindNodesImpl.md","ref":"dht/FindNodesImpl.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid","mathjax"],"pluginsConfig":{"mermaid":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dht/GetPeers.md","mtime":"2017-08-29T17:26:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:35:04.327Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1037 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>RootingTableを実装してみよう · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="FindNodes.html" />
+    
+    
+    <link rel="prev" href="kBucket.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/Intro.html">
+            
+                <a href="../intro/Intro.html">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/Introduction.html">
+            
+                <a href="../intro/Introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/About.html">
+            
+                <a href="../intro/About.html">
+            
+                    
+                    Torrentとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/Goal.html">
+            
+                <a href="../intro/Goal.html">
+            
+                    
+                    ゴール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../torrentfile/Torrentfile.html">
+            
+                <a href="../torrentfile/Torrentfile.html">
+            
+                    
+                    Torrentファイルを読み込む
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../torrentfile/About.html">
+            
+                <a href="../torrentfile/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../torrentfile/Bencode.html">
+            
+                <a href="../torrentfile/Bencode.html">
+            
+                    
+                    Bencode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../torrentfile/Implementation.html">
+            
+                <a href="../torrentfile/Implementation.html">
+            
+                    
+                    Bencodeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../torrentfile/Content.html">
+            
+                <a href="../torrentfile/Content.html">
+            
+                    
+                    TorrentFileの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../http/Http.html">
+            
+                <a href="../http/Http.html">
+            
+                    
+                    Httpサーバーを作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../upnp/Upnp.html">
+            
+                <a href="../upnp/Upnp.html">
+            
+                    
+                    UPnpによるポートマップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../upnp/About.html">
+            
+                <a href="../upnp/About.html">
+            
+                    
+                    UPnPによるポートマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../upnp/Implementation.html">
+            
+                <a href="../upnp/Implementation.html">
+            
+                    
+                    UPnPの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tracker/Tracker.html">
+            
+                <a href="../tracker/Tracker.html">
+            
+                    
+                    Trackerへアクセスしてみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tracker/About.html">
+            
+                <a href="../tracker/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tracker/Http.html">
+            
+                <a href="../tracker/Http.html">
+            
+                    
+                    TrackerはHttpサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tracker/Request.html">
+            
+                <a href="../tracker/Request.html">
+            
+                    
+                    リクエストの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tracker/Response.html">
+            
+                <a href="../tracker/Response.html">
+            
+                    
+                    レスポンスの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../tracker/Test.html">
+            
+                <a href="../tracker/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../client/Client.html">
+            
+                <a href="../client/Client.html">
+            
+                    
+                    ダウンロードゲームへ参加してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../client/About.html">
+            
+                <a href="../client/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../client/DownloadGame.html">
+            
+                <a href="../client/DownloadGame.html">
+            
+                    
+                    ダウンロードゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../client/BlockData.html">
+            
+                <a href="../client/BlockData.html">
+            
+                    
+                    ブロックデーターの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../client/Updater.html">
+            
+                <a href="../client/Updater.html">
+            
+                    
+                    配信用、Peerを作成してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../client/BasicSs.html">
+            
+                <a href="../client/BasicSs.html">
+            
+                    
+                    基本戦術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../client/ChokeImpl.html">
+            
+                <a href="../client/ChokeImpl.html">
+            
+                    
+                    Chokeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Dht.html">
+            
+                <a href="Dht.html">
+            
+                    
+                    DHTに対応してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="AboutDHT.html">
+            
+                <a href="AboutDHT.html">
+            
+                    
+                    Tracker無しでPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="kBucket.html">
+            
+                <a href="kBucket.html">
+            
+                    
+                    KademliaのkBucketを利用している
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.4" data-path="kBucketImpl.html">
+            
+                <a href="kBucketImpl.html">
+            
+                    
+                    RootingTableを実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="FindNodes.html">
+            
+                <a href="FindNodes.html">
+            
+                    
+                    FindNodeでネットワークの構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="FindNodesImpl.html">
+            
+                <a href="FindNodesImpl.html">
+            
+                    
+                    FindNodeを実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="GetPeers.html">
+            
+                <a href="GetPeers.html">
+            
+                    
+                    GetPeersでInfoHashに対応するPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="Test.html">
+            
+                <a href="Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    [Dartの基礎]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    [なぜDart]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dart/HelloWorld.html">
+            
+                <a href="../dart/HelloWorld.html">
+            
+                    
+                    Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dart/Observatory.html">
+            
+                <a href="../dart/Observatory.html">
+            
+                    
+                    Test/Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../dart/Observatory_GetStarted.html">
+            
+                <a href="../dart/Observatory_GetStarted.html">
+            
+                    
+                    Get started with Observatory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RootingTableを実装してみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rootingtable&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#x3002;">RootingTable&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#x3002;</h1>
+<p><hr></p>
+<ul>
+<li><strong>KId&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;</strong>
+<br></li>
+<li><strong>kBucket&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;</strong>
+<br></li>
+<li><strong>RootingTable&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;</strong>
+<br><hr>
+
+</li>
+</ul>
+<p>RootingTable&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x843D;&#x3068;&#x3059;&#x4E8B;&#x3067;&#x7406;&#x89E3;&#x3082;&#x6DF1;&#x307E;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="kid&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3002;">KID&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3002;</h2>
+<h4 id="infohash&#x3082;peerid&#x3082;kid&#x3068;&#x3057;&#x3066;&#x8868;&#x305B;&#x308B;&#x3002;">InfoHash&#x3082;PeerID&#x3082;KID&#x3068;&#x3057;&#x3066;&#x8868;&#x305B;&#x308B;&#x3002;</h4>
+<p>InfoHash &#x3068; InfoHash&#x3001;Peer ID&#x3068;InfoHash Peer ID &#x3068;Peer ID &#x306E;XOR&#x8DDD;&#x96E2;&#x3092;&#x8A08;&#x7B97;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3057;&#x305F;&#x3002;&#x3053;&#x308C;&#x3089;&#x306E;ID&#x306F;&#x3001;&#x3059;&#x3079;&#x3066;20&#x30D0;&#x30A4;&#x30C8;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3067;&#x3042;&#x308A;&#x540C;&#x3058;&#x3082;&#x306E;&#x3068;&#x3057;&#x3066;&#x5B9A;&#x7FA9;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x672C;&#x6587;&#x3067;&#x306F;KID&#x3068;&#x547C;&#x3076;&#x3053;&#x3068;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>XOR&#x3067;&#x306F;160bit&#x306E;&#x5024;&#x3092;&#x6271;&#x3046;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;Dart&#x8A00;&#x8A9E;&#x3067;&#x306F;160bit&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;
+&#x6570;&#x5024;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;53bit&#x307E;&#x3067;&#x3057;&#x304B;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;&#x3053;&#x308C;&#x306F;&#x3001;Dart&#x8A00;&#x8A9E;&#x306E;&#x554F;&#x984C;&#x3068;&#x3044;&#x3046;&#x308F;&#x3051;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x8A00;&#x8A9E;&#x3067;&#x3001;160bit&#x306E;&#x5024;&#x3092;&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<h5 id="-xor&#x8DDD;&#x96E2;&#x3092;&#x6570;&#x5024;&#x306B;&#x76F4;&#x3059;&#x6A5F;&#x80FD;&#x306F;&#x306A;&#x304F;&#x3066;&#x3082;&#x826F;&#x3044;">- XOR&#x8DDD;&#x96E2;&#x3092;&#x6570;&#x5024;&#x306B;&#x76F4;&#x3059;&#x6A5F;&#x80FD;&#x306F;&#x306A;&#x304F;&#x3066;&#x3082;&#x826F;&#x3044;</h5>
+<p>&#x672C;&#x66F8;&#x3067;&#x306F;160bit&#x306E;&#x6570;&#x5024;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x306A;&#x3044;&#x3067;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3067;&#x9032;&#x3081;&#x307E;&#x3059;&#x3002;
+&#x5B9F;&#x969B;&#x306B;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x308F;&#x304B;&#x308B;&#x306E;&#x3067;&#x3059;&#x304C;&#x3001;XOR&#x8DDD;&#x96E2;&#x3092;&#x6C42;&#x3081;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;RootingTable&#x4E0A;&#x306E;&#x3069;&#x306E;&#x4F4D;&#x7F6E;&#x306B;&#x683C;&#x7D0D;&#x3055;&#x308C;&#x308B;&#x306E;&#x304B;&#x3068;&#x3044;&#x3046;&#x60C5;&#x5831;&#x3068;&#x3001;&#x5927;&#x5C0F;&#x6BD4;&#x8F03;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x304C;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x307E;&#x305A;&#x306F;&#x3001;&#x6700;&#x521D;&#x306E;&#x5B9A;&#x7FA9;&#x3001;KID &#x306F;&#x3001;20byte&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6301;&#x3064;&#x4E8B;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KId</span> </span>{
+  <span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">int</span>&gt; _values = <span class="hljs-keyword">null</span>;
+  <span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">int</span>&gt; <span class="hljs-keyword">get</span> value =&gt; <span class="hljs-keyword">new</span> <span class="hljs-built_in">List</span>.from(_values);
+  KId(<span class="hljs-built_in">List</span>&lt;<span class="hljs-built_in">int</span>&gt; id) {
+    <span class="hljs-keyword">if</span>(id == <span class="hljs-keyword">null</span> || id.length != <span class="hljs-number">20</span>) {
+      <span class="hljs-keyword">throw</span> {};
+    }
+    <span class="hljs-keyword">this</span>._values = <span class="hljs-keyword">new</span> Uint8List.fromList(id);
+  }
+  <span class="hljs-built_in">int</span> <span class="hljs-keyword">get</span> length =&gt; _values.length;
+  <span class="hljs-built_in">int</span> <span class="hljs-keyword">operator</span> [](<span class="hljs-built_in">int</span> idx) =&gt; _values[idx];
+  <span class="hljs-built_in">Iterator</span>&lt;<span class="hljs-built_in">int</span>&gt; <span class="hljs-keyword">get</span> iterator =&gt; _values.iterator;
+}
+</code></pre>
+<h4 id="xor-&#x306E;&#x8A08;&#x7B97;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;">XOR &#x306E;&#x8A08;&#x7B97;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</h4>
+<p>KId&#x306F;XOR&#x8DDD;&#x96E2;&#x304C;&#x8A08;&#x7B97;&#x3067;&#x304D;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x6570;&#x5024;&#x3068;&#x3057;&#x3066;&#x306F;&#x8868;&#x73FE;&#x3059;&#x308B;&#x4E8B;&#x306F;&#x8AE6;&#x3081;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;&#x8A08;&#x7B97;&#x3057;&#x305F;&#x7D50;&#x679C;&#x306F;KID&#x3068;&#x3057;&#x3066;&#x8FD4;&#x3059;&#x6A5F;&#x80FD;&#x306F;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;&#x30D0;&#x30A4;&#x30C8;&#x914D;&#x5217;&#x306E;&#x5404;&#x5024;&#x3054;&#x3068;&#x306B; xor&#x3092;&#x3068;&#x308B;&#x4E8B;&#x3067;&#x5B9F;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KId</span> </span>{
+  ...
+  ...
+  ...
+  KId xor(KId b, [KId output = <span class="hljs-keyword">null</span>]) {
+    <span class="hljs-keyword">if</span> (output == <span class="hljs-keyword">null</span>) {
+      output = <span class="hljs-keyword">new</span> KId.zeroClear();
+    }
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; b._values.length; i++) {
+      output._values[i] = <span class="hljs-keyword">this</span>._values[i] ^ b._values[i];
+    }
+    <span class="hljs-keyword">return</span> output;
+  }
+}
+</code></pre>
+<h4 id="&#x5927;&#x5C0F;&#x6BD4;&#x8F03;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;">&#x5927;&#x5C0F;&#x6BD4;&#x8F03;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</h4>
+<p>&#x5927;&#x5C0F;&#x6BD4;&#x8F03;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x4E8B;&#x306B;&#x3088;&#x308A;&#x3001;&#x30BD;&#x30FC;&#x30C8;&#x304C;&#x53EF;&#x80FD;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x30BD;&#x30FC;&#x30C8;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3068;&#x3001;&#x3042;&#x308B;KID&#x306B;&#x8FD1;&#x3044;&#x5024;&#x9806;&#x306B;&#x4E00;&#x89A7;&#x3092;&#x51FA;&#x3059;&#x3068;&#x304B;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x3055;&#x306B;&#x3001;&#x3053;&#x308C;&#x304B;&#x3089;&#x4F5C;&#x6210;&#x3057;&#x3088;&#x3046;&#x3068;&#x3057;&#x3066;&#x3044;&#x308B;&#x3001;InfoHash&#x306B;&#x8FD1;&#x3044;&#x5024;&#x3092;&#x6301;&#x3064;Peer&#x4E00;&#x89A7;&#x3092;&#x8FD4;&#x3059;&#x6A5F;&#x80FD;&#x305D;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KId</span> </span>{
+  ...
+  ...
+  ...
+  <span class="hljs-built_in">bool</span> <span class="hljs-keyword">operator</span> &gt;(KId b) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; b._values.length; i++) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._values[i] == b._values[i]) {
+        <span class="hljs-keyword">continue</span>;
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._values[i] &gt; b._values[i]) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+      }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+  }
+
+  <span class="hljs-built_in">bool</span> <span class="hljs-keyword">operator</span> ==(KId b) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; b._values.length; i++) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>._values[i] != b._values[i]) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+      }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+  }
+
+  <span class="hljs-built_in">bool</span> <span class="hljs-keyword">operator</span> &gt;=(KId b) {
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span> == b ? <span class="hljs-keyword">true</span> : (<span class="hljs-keyword">this</span> &gt; b ? <span class="hljs-keyword">true</span> : <span class="hljs-keyword">false</span>));
+  }
+
+  <span class="hljs-built_in">bool</span> <span class="hljs-keyword">operator</span> &lt;(KId b) {
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span> == b ? <span class="hljs-keyword">false</span> : !(<span class="hljs-keyword">this</span> &gt; b));
+  }
+
+  <span class="hljs-built_in">bool</span> <span class="hljs-keyword">operator</span> &lt;=(KId b) {
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span> == b ? <span class="hljs-keyword">true</span> : (<span class="hljs-keyword">this</span> &gt; b ? <span class="hljs-keyword">false</span> : <span class="hljs-keyword">true</span>));
+  }
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x3067;KID&#x306E;&#x4F5C;&#x6210;&#x306F;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;&#x4E8B;&#x306E;&#x985B;&#x672B;&#x3092;&#x77E5;&#x308A;&#x305F;&#x3044;&#x65B9;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+<a href="https://github.com/kyorohiro/dart_hetimatorrent/tree/master/lib/src/dht" target="_blank">https://github.com/kyorohiro/dart_hetimatorrent/tree/master/lib/src/dht</a></p>
+<p>&#x5B9F;&#x88C5;&#x4F5C;&#x696D;&#x306F;&#x3001;&#x5FC5;&#x305A;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x66F8;&#x304D;&#x306A;&#x304C;&#x3089;&#x3001;&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x9032;&#x3081;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h2 id="kbucket&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3002;">kBucket&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3002;</h2>
+<p>kBucket&#x306F;&#x3001;K&#x500B;&#x306E;Peet&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x60C5;&#x5831;&#x3092;&#x683C;&#x7D0D;&#x3059;&#x308B;&#x5165;&#x308C;&#x7269;&#x3067;&#x3059;&#x3002;&#x3053;&#x308C;&#x306F;&#x3001;&#x5024;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x6642;&#x306B;&#x5236;&#x9650;&#x3092;&#x3082;&#x305F;&#x305B;&#x305F;List&#x3068;&#x3057;&#x3066;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x306D;&#x3002;</p>
+<p>&#x4ECA;&#x56DE;&#x306E;&#x5B9F;&#x88C5;&#x3067;&#x306F;kBucket&#x304C;&#x6E80;&#x676F;&#x306B;&#x306A;&#x3063;&#x305F;&#x5834;&#x5408;&#x306F;&#x53E4;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x524A;&#x9664;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x3042;&#x305F;&#x308A;&#x306F;&#x3001;&#x5B9F;&#x969B;&#x306B;&#x52D5;&#x4F5C;&#x3055;&#x305B;&#x3066;&#x307F;&#x3066;&#x6700;&#x9069;&#x306A;&#x65B9;&#x6CD5;&#x3092;&#x8A66;&#x884C;&#x932F;&#x8AA4;&#x3059;&#x3079;&#x304D;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KBucket</span> </span>{
+  <span class="hljs-built_in">int</span> _k = <span class="hljs-number">8</span>;
+  <span class="hljs-built_in">int</span> <span class="hljs-keyword">get</span> k =&gt; _k;
+  <span class="hljs-built_in">List</span>&lt;KPeerInfo&gt; peerInfos = <span class="hljs-keyword">null</span>;
+
+  KBucket(<span class="hljs-built_in">int</span> kBucketSize) {
+    <span class="hljs-keyword">this</span>._k = kBucketSize;
+    <span class="hljs-keyword">this</span>.peerInfos = [];
+  }
+
+  add(KPeerInfo peerInfo) {
+    <span class="hljs-keyword">if</span> (peerInfos.contains(peerInfo) == <span class="hljs-keyword">true</span>) {
+      peerInfos.remove(peerInfo);
+    }
+    peerInfos.add(peerInfo);
+    <span class="hljs-keyword">if</span> (peerInfos.length &gt; k) {
+      peerInfos.removeAt(<span class="hljs-number">0</span>);
+    }
+  }
+
+  <span class="hljs-built_in">int</span> <span class="hljs-keyword">get</span> length =&gt; peerInfos.length;
+  KPeerInfo <span class="hljs-keyword">operator</span> [](<span class="hljs-built_in">int</span> idx) =&gt; peerInfos[idx];
+  <span class="hljs-built_in">Iterator</span>&lt;KPeerInfo&gt; <span class="hljs-keyword">get</span> iterator =&gt; peerInfos.iterator;
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x3067;kBucket&#x306E;&#x4F5C;&#x6210;&#x306F;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;&#x4E8B;&#x306E;&#x985B;&#x672B;&#x3092;&#x77E5;&#x308A;&#x305F;&#x3044;&#x65B9;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+<a href="https://github.com/kyorohiro/dart_hetimatorrent/tree/master/lib/src/dht" target="_blank">https://github.com/kyorohiro/dart_hetimatorrent/tree/master/lib/src/dht</a></p>
+<h2 id="rootingtable&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;">RootingTable&#x3092;&#x5B9F;&#x88C5;&#x3059;&#x308B;</h2>
+<p>&#x524D;&#x7AE0;&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x3068;&#x304A;&#x308A;&#x3001;RootingTable&#x306F;&#x3001;0&#x301C;160&#x307E;&#x3067;&#x306E;161&#x500B;&#x306E;kBucket&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3057;&#x305F;&#x3002;
+&#x307E;&#x305A;&#x306F;&#x3001;&#x6700;&#x521D;&#x306E;&#x5B9A;&#x7FA9;&#x3001;kBucket&#x3092;161&#x500B;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KRootingTable</span> </span>{
+  <span class="hljs-built_in">List</span>&lt;KBucket&gt; _kBuckets = [];
+  <span class="hljs-built_in">int</span> _kBucketSize = <span class="hljs-number">0</span>;
+
+  KRootingTable(<span class="hljs-built_in">int</span> k_bucketSize) {
+    <span class="hljs-keyword">this</span>._kBucketSize = k_bucketSize;
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">161</span>; i++) {
+      _kBuckets.add(<span class="hljs-keyword">new</span> KBucket(k_bucketSize));
+    }
+  }
+}
+</code></pre>
+<h4 id="kid&#x306B;&#x5024;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x3001;&#x8FFD;&#x52A0;&#x3059;&#x308B;xbucket&#x3092;&#x6C7A;&#x3081;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;">KId&#x306B;&#x5024;&#x306B;&#x5FDC;&#x3058;&#x3066;&#x3001;&#x8FFD;&#x52A0;&#x3059;&#x308B;xBucket&#x3092;&#x6C7A;&#x3081;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</h4>
+<p>RootingTable&#x3092;&#x6240;&#x6301;&#x3057;&#x3066;&#x3044;&#x308B;Peer&#x3068;&#x306E;XOR&#x3092;&#x8A08;&#x7B97;&#x3057;&#x3066;&#x3082;&#x305D;&#x306E;&#x5024;&#x3092;&#x3082;&#x3068;&#x306B;&#x3001;&#x3069;&#x306E;xBucket&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x304B;&#x3092;&#x6C7A;&#x3081;&#x307E;&#x3059;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5024;</th>
+<th>2&#x9032;</th>
+<th>index</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>000</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>001</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2, 3</td>
+<td>010, 011</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4, 5, 6, 7</td>
+<td>100, 101, 110, 111</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5B9F;&#x969B;&#x306B;&#x8868;&#x306B;&#x843D;&#x3068;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x3001;&#x5DE6;&#x304B;&#x3089;&#x53F3;&#x3078;1bit&#x305A;&#x3064;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x3044;&#x3063;&#x3066;&#x3001;&#x6700;&#x521D;&#x306B;1&#x3067;&#x3042;&#x3063;&#x305F;&#x5834;&#x6240;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;kBucket&#x4F4D;&#x7F6E;&#x304C;&#x6C7A;&#x307E;&#x308B;&#x4E8B;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3092;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x843D;&#x3068;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KRootingTable</span> </span>{
+  <span class="hljs-built_in">List</span>&lt;KBucket&gt; _kBuckets = [];
+  <span class="hljs-built_in">int</span> _kBucketSize = <span class="hljs-number">0</span>;
+  KId _ownerKId = <span class="hljs-keyword">null</span>;
+  KId <span class="hljs-keyword">get</span> ownerKId =&gt; _ownerKId;
+
+  KRootingTable(<span class="hljs-built_in">int</span> k_bucketSize, KId ownerKId) {
+    <span class="hljs-keyword">this</span>._kBucketSize = k_bucketSize;
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">161</span>; i++) {
+      _kBuckets.add(<span class="hljs-keyword">new</span> KBucket(k_bucketSize));
+    }
+    <span class="hljs-keyword">this</span>._ownerKId = ownerKId;
+  }
+
+  <span class="hljs-built_in">int</span> getRootingTabkeIndex(KId v) {
+    <span class="hljs-comment">// xor&#x8DDD;&#x96E2;&#x3092;&#x8A08;&#x7B97;&#x3059;&#x308B;</span>
+    v = v.xor(_ownerKId);
+
+    <span class="hljs-comment">// &#x5BFE;&#x5FDC;&#x3059;&#x308B;kBucket&#x3092;&#x63A2;&#x3059;&#x3002;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>, ret = <span class="hljs-number">19</span>; i &lt; <span class="hljs-number">20</span>; i++, ret--) {
+      <span class="hljs-keyword">if</span> (v[i] != <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">9</span>; j++) {
+          <span class="hljs-keyword">if</span> (v[i] &lt; (<span class="hljs-number">0x1</span> &lt;&lt; j)) {
+            <span class="hljs-keyword">return</span> (ret * <span class="hljs-number">8</span>) + j;
+          }
+        }
+        <span class="hljs-keyword">return</span> i;
+      }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  }
+}
+</code></pre>
+<h3 id="peer&#x306E;&#x60C5;&#x5831;&#x304C;&#x6E21;&#x3055;&#x308C;&#x305F;&#x3089;&#x3001;&#x5BFE;&#x5FDC;&#x3059;&#x308B;kbucket&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;">Peer&#x306E;&#x60C5;&#x5831;&#x304C;&#x6E21;&#x3055;&#x308C;&#x305F;&#x3089;&#x3001;&#x5BFE;&#x5FDC;&#x3059;&#x308B;kBucket&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;</h3>
+<p>&#x3044;&#x307E;&#x307E;&#x3067;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x6A5F;&#x80FD;&#x3092;&#x5408;&#x308F;&#x305B;&#x308B;&#x4E8B;&#x3067;&#x3001;RootingTable&#x3092;&#x66F4;&#x65B0;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>class KRootingTable {
+  ...
+  ...
+  ...
+  Future update(KPeerInfo info) {
+    return new Future(() {
+      _kBuckets[getRootingTabkeIndex(info.id)].add(info);
+    });
+  }
+  ...
+  ...
+}
+</code></pre><p>&#x3053;&#x308C;&#x3067;&#x3001;RootingTable&#x306E;&#x4F5C;&#x6210;&#x306F;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;&#x6B21;&#x306E;&#x7AE0;&#x306E;&#x8AAC;&#x660E;&#x3092;&#x5F97;&#x3066;&#x3001;findNode&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;&#x4ECA;&#x307E;&#x3067;&#x306B;&#x89E3;&#x8AAC;&#x3057;&#x305F;&#x5185;&#x5BB9;&#x3067;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308B;&#x306E;&#x306F;&#x3053;&#x3053;&#x307E;&#x3067;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<hr>
+<p>Kyorohiro work</p>
+<p><a href="http://kyorohiro.strikingly.com" target="_blank">http://kyorohiro.strikingly.com</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="kBucket.html" class="navigation navigation-prev " aria-label="Previous page: KademliaのkBucketを利用している">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="FindNodes.html" class="navigation navigation-next " aria-label="Next page: FindNodeでネットワークの構築">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RootingTableを実装してみよう","level":"1.8.4","depth":2,"next":{"title":"FindNodeでネットワークの構築","level":"1.8.5","depth":2,"path":"dht/FindNodes.md","ref":"dht/FindNodes.md","articles":[]},"previous":{"title":"KademliaのkBucketを利用している","level":"1.8.3","depth":2,"path":"dht/kBucket.md","ref":"dht/kBucket.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid","mathjax"],"pluginsConfig":{"mermaid":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dht/kBucketImpl.md","mtime":"2017-08-29T17:26:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:35:04.327Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

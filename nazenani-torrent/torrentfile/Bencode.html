@@ -1,0 +1,892 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Bencode · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Implementation.html" />
+    
+    
+    <link rel="prev" href="About.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../intro/Intro.html">
+            
+                <a href="../intro/Intro.html">
+            
+                    
+                    イントロ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../intro/Introduction.html">
+            
+                <a href="../intro/Introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../intro/About.html">
+            
+                <a href="../intro/About.html">
+            
+                    
+                    Torrentとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../intro/Goal.html">
+            
+                <a href="../intro/Goal.html">
+            
+                    
+                    ゴール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="Torrentfile.html">
+            
+                <a href="Torrentfile.html">
+            
+                    
+                    Torrentファイルを読み込む
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="About.html">
+            
+                <a href="About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="Bencode.html">
+            
+                <a href="Bencode.html">
+            
+                    
+                    Bencode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="Implementation.html">
+            
+                <a href="Implementation.html">
+            
+                    
+                    Bencodeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="Content.html">
+            
+                <a href="Content.html">
+            
+                    
+                    TorrentFileの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../http/Http.html">
+            
+                <a href="../http/Http.html">
+            
+                    
+                    Httpサーバーを作成してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../upnp/Upnp.html">
+            
+                <a href="../upnp/Upnp.html">
+            
+                    
+                    UPnpによるポートマップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../upnp/About.html">
+            
+                <a href="../upnp/About.html">
+            
+                    
+                    UPnPによるポートマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../upnp/Implementation.html">
+            
+                <a href="../upnp/Implementation.html">
+            
+                    
+                    UPnPの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tracker/Tracker.html">
+            
+                <a href="../tracker/Tracker.html">
+            
+                    
+                    Trackerへアクセスしてみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tracker/About.html">
+            
+                <a href="../tracker/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tracker/Http.html">
+            
+                <a href="../tracker/Http.html">
+            
+                    
+                    TrackerはHttpサーバ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tracker/Request.html">
+            
+                <a href="../tracker/Request.html">
+            
+                    
+                    リクエストの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../tracker/Response.html">
+            
+                <a href="../tracker/Response.html">
+            
+                    
+                    レスポンスの中身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../tracker/Test.html">
+            
+                <a href="../tracker/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../client/Client.html">
+            
+                <a href="../client/Client.html">
+            
+                    
+                    ダウンロードゲームへ参加してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../client/About.html">
+            
+                <a href="../client/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../client/DownloadGame.html">
+            
+                <a href="../client/DownloadGame.html">
+            
+                    
+                    ダウンロードゲーム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../client/BlockData.html">
+            
+                <a href="../client/BlockData.html">
+            
+                    
+                    ブロックデーターの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../client/Updater.html">
+            
+                <a href="../client/Updater.html">
+            
+                    
+                    配信用、Peerを作成してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../client/BasicSs.html">
+            
+                <a href="../client/BasicSs.html">
+            
+                    
+                    基本戦術
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../client/ChokeImpl.html">
+            
+                <a href="../client/ChokeImpl.html">
+            
+                    
+                    Chokeの実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../dht/Dht.html">
+            
+                <a href="../dht/Dht.html">
+            
+                    
+                    DHTに対応してみる
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../dht/About.html">
+            
+                <a href="../dht/About.html">
+            
+                    
+                    About
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../dht/AboutDHT.html">
+            
+                <a href="../dht/AboutDHT.html">
+            
+                    
+                    Tracker無しでPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../dht/kBucket.html">
+            
+                <a href="../dht/kBucket.html">
+            
+                    
+                    KademliaのkBucketを利用している
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../dht/kBucketImpl.html">
+            
+                <a href="../dht/kBucketImpl.html">
+            
+                    
+                    RootingTableを実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../dht/FindNodes.html">
+            
+                <a href="../dht/FindNodes.html">
+            
+                    
+                    FindNodeでネットワークの構築
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../dht/FindNodesImpl.html">
+            
+                <a href="../dht/FindNodesImpl.html">
+            
+                    
+                    FindNodeを実装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../dht/GetPeers.html">
+            
+                <a href="../dht/GetPeers.html">
+            
+                    
+                    GetPeersでInfoHashに対応するPeerを探す
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="../dht/Test.html">
+            
+                <a href="../dht/Test.html">
+            
+                    
+                    テスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    [Dartの基礎]
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <span>
+            
+                    
+                    [なぜDart]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dart/HelloWorld.html">
+            
+                <a href="../dart/HelloWorld.html">
+            
+                    
+                    Hello World
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dart/Observatory.html">
+            
+                <a href="../dart/Observatory.html">
+            
+                    
+                    Test/Debug
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.3.1" data-path="../dart/Observatory_GetStarted.html">
+            
+                <a href="../dart/Observatory_GetStarted.html">
+            
+                    
+                    Get started with Observatory
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Bencode</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bencode">Bencode</h1>
+<p><hr>
+<br></p>
+<ul>
+<li><p><strong>Torrent&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;bencode&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x3002;</strong></p>
+</li>
+<li><p><strong>Bencode&#x306F;&#x3001;Integer&#x3001;String&#x3001;List&#x3001;Dictionary&#x3092;&#x6271;&#x3048;&#x308B;&#x3002;</strong></p>
+</li>
+</ul>
+<p><br></p>
+<hr>
+
+<h2 id="torrent&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;-bencoding">Torrent&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F; Bencoding</h2>
+<p>Torrent&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x3001;bencode &#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+Torrent&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x8A18;&#x8F09;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x4E8B;&#x3092;&#x8AAD;&#x307F;&#x89E3;&#x304F;&#x305F;&#x3081;&#x306B;&#x306F;&#x3001;
+bencode &#x3092;&#x89E3;&#x91C8;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3089;&#x306A;&#x304F;&#x3066;&#x306F;&#x306A;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;&#x307E;&#x305A;&#x306F;&#x3001;Bencode &#x306E;&#x30D1;&#x30FC;&#x30B5;&#x30FC;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>Bencoding&#x306F;&#x3001;&#x6587;&#x5B57;&#x5217;&#x3001;&#x6574;&#x6570;&#x3001;&#x8F9E;&#x66F8;&#x3001;&#x30EA;&#x30B9;&#x30C8;&#x306E;4&#x3064;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;
+&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>beninteger : &#x201C;i&#x201D; [0-9]* &#x201C;e&#x201D;
+benstring : &lt;string length&gt; &#x201C;:&#x201D; &lt;bytes array string&gt;
+string length : [0-9]*
+bendiction : &#x201C;d&#x201D; &lt;dictelements&gt; &#x201C;e&#x201D;
+benlist : &#x201C;l&#x201D; &lt;listelements&gt; &#x201C;e&#x201D;
+benobject : beninteger | benstring | bendiction | benlist
+listelements : benobject ( benobject)*
+dictelements : benstring benobject (benstring benobject)*
+</code></pre><p>&#x305D;&#x3057;&#x3066;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30C3;&#x30C8;&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<hr style="page-break-before: always;">
+
+<h4 id="&#x6587;&#x5B57;&#x5217;string&#x3092;&#x6271;&#x3048;&#x308B;">&#x6587;&#x5B57;&#x5217;(String)&#x3092;&#x6271;&#x3048;&#x308B;</h4>
+<p>Bencode &#x3067;&#x6587;&#x5B57;&#x5217;&#x306F;&#x3001;&#x300C;&lt;&#x6587;&#x5B57;&#x306E;&#x9577;&#x3055;&gt; &#x201C;:&#x201D; &lt;&#x6587;&#x5B57;&gt;&#x300D;&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;
+&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;&#x300C;torrent&#x3068;&#x3044;&#x3046;&#x6587;&#x5B57;&#x5217;&#x306F;&#x3001;
+bencode&#x3067;&#x306F;&#x3001;&#x300C;7:torrent&#x300D;&#x3068;&#x66F8;&#x304F;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3082;&#x3046;&#x3072;&#x3068;&#x3064;&#x3001;bencode &#x306E;&#x6587;&#x5B57;&#x5217;&#x306F;&#x3001;&#x30D0;&#x30A4;&#x30C8;&#x30C7;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x6271;&#x308F;&#x308C;
+&#x308B;&#x4E8B;&#x3082;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306E;&#x30D0;&#x30A4;&#x30C8;&#x8868;&#x793A;&#x3084;&#x3001;Hash&#x5024;&#x306A;&#x3069;&#x306E;&#x975E;
+&#x30A2;&#x30B9;&#x30AD;&#x30FC;&#x306A;&#x7BC4;&#x56F2;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x306A;&#x3069;&#x3082;&#x3001;&#x672C;&#x5F62;&#x5F0F;&#x3067;&#x6271;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;&#x65E5;&#x672C;&#x8A9E;&#x3067;&#x300C;&#x30A2;&#x30A4;&#x300D;&#x306F;SJIS&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3068;&#x300C;0x83, 0x41,
+0x83, 0x43&#x300D;&#x306E;4&#x30D0;&#x30A4;&#x30C8;&#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x5834;&#x5408;&#x3001;Bencode
+&#x3067;&#x306F;&#x3001;&#x300C;4:&#x30A2;&#x30A4;&#x300D;&#x3068;&#x8868;&#x8A18;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h6 id="oden-&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">oden &#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code>4:oden
+</code></pre><h6 id="&#x304A;&#x3067;&#x3093;sjis&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">&#x304A;&#x3067;&#x3093;(SJIS)&#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code>6:&#x30AA;&#x30C7;&#x30F3;
+</code></pre><h6 id="sha1hash&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">SHA1Hash&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code> 20:&lt;SHA1 Hash&#x30C7;&#x30FC;&#x30BF;&gt;
+</code></pre><h4 id="&#x6574;&#x6570;number&#x3092;&#x6271;&#x3048;&#x308B;">&#x6574;&#x6570;(Number)&#x3092;&#x6271;&#x3048;&#x308B;</h4>
+<p>&#x6574;&#x6570;&#x306F;0&#x3088;&#x308A;&#x5927;&#x304D;&#x306A;&#x5024;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x3067;&#x3059;&#x3002;&#x300C;&#x201C;i&#x201D; *[0-9] &#x201C;e&#x201D;&#x300D;
+&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x8868;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x4F8B;&#x3048;&#x3070;&#x3001;1024&#x306F;&#x300C;i1024e&#x300D;
+&#x3068;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30B5;&#x30A4;&#x30BA;&#x3001;&#x30DD;&#x30FC;&#x30C8;&#x756A;&#x53F7;&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x3001;&#x6570;&#x5B57;&#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x308B;
+&#x3082;&#x306E;&#x306B;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h6 id="2-&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;">2 &#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</h6>
+<pre><code>i2e
+</code></pre><h6 id="1024&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">1024&#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code> i1024e
+</code></pre><h6 id="314&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">3.14&#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<p>&#x300C;3.14&#x300D;Bencode&#x306E;Number&#x8868;&#x898B;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;&#x6271;&#x3048;&#x308B;&#x306E;&#x306F;&#x6574;&#x6570;&#x5024;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;</p>
+<h4 id="&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x6271;&#x3048;&#x308B;">&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x6271;&#x3048;&#x308B;</h4>
+<p>&#x30EA;&#x30B9;&#x30C8;&#x306F;&#x8907;&#x6570;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x9806;&#x5E8F;&#x3042;&#x308A;&#x3067;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+Bencode&#x3067;&#x306F;&#x300C;&quot;l&quot; <listelements> &quot;e&quot;&#x300D;&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x8868;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</listelements></p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;&#x6240;&#x6301;&#x3057;&#x3066;&#x308B;&#x672C;&#x3001;&#x300C;&#x3066;&#x3093;&#x3067;&#x6027;&#x60AA;&#x30AD;&#x30E5;&#x30FC;&#x30D4;&#x30C3;&#x30C9;&#x300D;&#x300C;&#x5E7D;&#x2606;&#x904A;&#x2606;&#x767D;&#x66F8;&#x300D;&#x300C;&#x30EC;&#x30D9;&#x30EB;E&#x300D;&#x300C;HUNTER&#xD7;HUNTER&#x300D;&#x3068;&#x3044;&#x3063;&#x305F;&#x672C;&#x306E;&#x4E00;&#x89A7;&#x306F;&#x3001;&#x500B;&#x5225;&#x306B;
+Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3068;&#x3001;&#x300C;22:&#x3066;&#x3093;&#x3067;&#x6027;&#x60AA;&#x30AD;&#x30E5;&#x30FC;&#x30D4;&#x30C3;&#x30C8;&#x300D;&#x3001;&#x300C;12:&#x5E7D;&#x2606;&#x904A;&#x2606;&#x767D;&#x66F8;&#x300D;&#x3001;&#x300C;7:&#x30EC;&#x30D9;&#x30EB;E&#x300D;&#x3001;&#x300C;13:HUNTER&#xD7;HUNTER&#x300D;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3092;List&#x3067;&#x300C;l22:&#x3066;&#x3093;&#x3067;&#x6027;&#x60AA;&#x30AD;&#x30E5;&#x30FC;&#x30D4;&#x30C3;&#x30C8;12:&#x5E7D;&#x2606;&#x904A;&#x2606;&#x767D;&#x66F8;7:&#x30EC;&#x30D9;&#x30EB;E13:HUNTER&#xD7;HUNTERe&#x300D;&#x3068;&#x307E;&#x3068;&#x3081;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h6 id="&#x300C;&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;&#x3001;&#x304B;&#x304D;&#x304F;&#x3051;&#x3053;&#x300D;&#x3092;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">&#x300C;&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;&#x3001;&#x304B;&#x304D;&#x304F;&#x3051;&#x3053;&#x300D;&#x3092;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code> l12:&#x3042;&#x3044;&#x3046;&#x3048;&#x304A;12&#x304B;&#x304D;&#x304F;&#x3051;&#x3053;e
+</code></pre><h6 id="&#x300C;128&#x3001;-100&#x3001;500&#x300D;&#x3092;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">&#x300C;128&#x3001; 100&#x3001;500&#x300D;&#x3092;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<pre><code> li128ei100ei500ee
+</code></pre><h3 id="&#x8F9E;&#x66F8;">&#x8F9E;&#x66F8;</h3>
+<p>&#x8F9E;&#x66F8;&#x306F;&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x3068;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x95A2;&#x9023;&#x3065;&#x3051;&#x3066;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x300C; &#x201C;d&#x201D; <dictelements> &#x201C;e&#x201D;&#x300D;&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</dictelements></p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;RPG&#x30B2;&#x30FC;&#x30E0;&#x306E;&#x4E3B;&#x4EBA;&#x516C;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3068;&#x3057;&#x3066;&#x3001;&#x540D;&#x524D;&#x3001;&#x30EC;&#x30D9;&#x30EB;&#x3001;&#x7FD2;&#x5F97;&#x3057;&#x305F;&#x9B54;&#x6CD5;&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x3082;&#x306E;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x540D;&#x524D;&#x3092;&#x52C7;&#x8005;&#x3001;&#x30EC;&#x30D9;&#x30EB;&#x304C;1&#x3001;&#x7FD2;&#x5F97;&#x3057;&#x305F;&#x9B54;&#x6CD5;&#x3092;&#x30CF;&#x30EA;&#x30C8;&#x3068;&#x30AB;&#x30C6;&#x30A3;&#x30CE;&#x3068;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x305D;&#x308C;&#x305E;&#x308C;Bencode&#x3067;&#x3001;&#x300C;4:&#x540D;&#x524D;&#x300D;&#x300C;4:&#x52C7;&#x8005;&#x300D;&#x300C;6:&#x30EC;&#x30D9;&#x30EB;&#x300D;&#x300C;i1e&#x300D;&#x300C;4:&#x9B54;&#x6CD5;&#x300D;&#x3001;&#x300C;l6:&#x30CF;&#x30EA;&#x30C8;8:&#x30AB;&#x30C6;&#x30A3;&#x30CE;e&#x300D;&#x3068;&#x8868;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x3089;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x3001;&#x300C;d4:&#x540D;&#x524D;4:&#x52C7;&#x8005;6:&#x30EC;&#x30D9;&#x30EB;i1e4:&#x9B54;&#x6CD5;l6:&#x30CF;&#x30EA;&#x30C8;8:&#x30AB;&#x30C6;&#x30A3;&#x30CE;ee&#x300D;&#x3068;&#x8F9E;&#x66F8;&#x3067;&#x8868;&#x898B;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h6 id="level&#x304C;13&#x3067;&#x3001;name&#x304C;&#x5C71;&#x7530;&#x3001;bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;">level&#x304C;13&#x3067;&#x3001;name&#x304C;&#x5C71;&#x7530;&#x3001;Bencode&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;</h6>
+<p>``
+di5:leveli13e4:name4&#x5C71;&#x7530;e
+```</p>
+<h2 id="&#x4ECA;&#x5F8C;&#x306E;&#x8868;&#x8A18;&#x306B;&#x3064;&#x3044;&#x3066;">&#x4ECA;&#x5F8C;&#x306E;&#x8868;&#x8A18;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
+<p>&#x4ECA;&#x5F8C;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x69CB;&#x9020;&#x3092;&#x8868;&#x3059;&#x5834;&#x5408;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x8A18;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30EA;&#x30B9;&#x30C8;
+&#x300C;li512e4:teste&#x300D;&#x306F;&#x3001;[512,&quot;test&quot;]</p>
+<p>&#x8F9E;&#x66F8;
+&#x300C;d5:leveli13e5magic6halitoe&#x300D;&#x306F; {level:13,magic:&quot;halito&quot;}</p>
+<hr>
+<p>Kyorohiro work</p>
+<p><a href="http://kyorohiro.strikingly.com" target="_blank">http://kyorohiro.strikingly.com</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="About.html" class="navigation navigation-prev " aria-label="Previous page: About">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Implementation.html" class="navigation navigation-next " aria-label="Next page: Bencodeの実装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Bencode","level":"1.3.2","depth":2,"next":{"title":"Bencodeの実装","level":"1.3.3","depth":2,"path":"torrentfile/Implementation.md","ref":"torrentfile/Implementation.md","articles":[]},"previous":{"title":"About","level":"1.3.1","depth":2,"path":"torrentfile/About.md","ref":"torrentfile/About.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mermaid","mathjax"],"pluginsConfig":{"mermaid":{},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"torrentfile/Bencode.md","mtime":"2017-08-29T17:26:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:35:04.327Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
