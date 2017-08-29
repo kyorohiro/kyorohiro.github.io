@@ -1,0 +1,540 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Nat越えしてみよう · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="implement.html" />
+    
+    
+    <link rel="prev" href="aboutstun.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Cover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="aboutstun.html">
+            
+                <a href="aboutstun.html">
+            
+                    
+                    STUNとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="nattraversal.html">
+            
+                <a href="nattraversal.html">
+            
+                    
+                    Nat越えしてみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="implement.html">
+            
+                <a href="implement.html">
+            
+                    
+                    実装してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="after.html">
+            
+                <a href="after.html">
+            
+                    
+                    あとがき
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Nat越えしてみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nat&#x8D8A;&#x3048;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;">Nat&#x8D8A;&#x3048;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</h1>
+<p>&#x3000;&#x5B9F;&#x969B;&#x306B;Nat&#x8D8A;&#x3048;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x5F90;&#x3005;&#x306B;&#x62E1;&#x5F35;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;STUN&#x3078;&#x8FD1;&#x3065;&#x3051;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="1-&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x4E00;&#x6642;&#x7684;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x305F;ip&#x3068;port&#x3092;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;">[1] &#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x4E00;&#x6642;&#x7684;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x305F;IP&#x3068;Port&#x3092;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;</h2>
+<p>&#x3000;&#x4E00;&#x6642;&#x7684;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306B;&#x306F;&#x3069;&#x3046;&#x3059;&#x308C;&#x3070;&#x826F;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;?&#x3000;&#x300C;&#x5B9F;&#x969B;&#x306B;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x307F;&#x3066;&#x3001;&#x305D;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x3001;&#x4E00;&#x6642;&#x7684;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3068;Port&#x304C;&#x4F55;&#x304B;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3046;&#x3002;&#x300D;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x3001;STUN&#x306E;&#x57FA;&#x672C;&#x7684;&#x306A;&#x6226;&#x7565;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3000;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30CD;&#x30C3;&#x30C8;&#x306B;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x7AEF;&#x672B;&#x306F;&#x3001;IP&#x3067;&#x7BA1;&#x7406;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3057;&#x305F;&#x3002;&#x6211;&#x3005;&#x306F;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3089;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3078;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3069;&#x3046;&#x3088;&#x3046;&#x306B;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3082;&#x5229;&#x7528;&#x8005;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x77E5;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3089;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x914D;&#x4FE1;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;
+ &#x3053;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304C;&#x8A8D;&#x8B58;&#x3057;&#x3066;&#x3044;&#x308B;&#x3001;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x6559;&#x3048;&#x3066;&#x3082;&#x3089;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="dart&#x3067;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;">Dart&#x3067;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;</h4>
+<h6 id="server&#x5074;&#x306E;&#x30B3;&#x30FC;&#x30C9;">Server&#x5074;&#x306E;&#x30B3;&#x30FC;&#x30C9;</h6>
+<pre><code>import &apos;dart:io&apos;;
+import &apos;dart:convert&apos;;
+
+main(List&lt;String&gt; args) async {
+  String svAddr = args[0];
+  int svPort = int.parse(args[1]);
+  startUDPServer(svAddr, svPort);
+  startTCPServer(svAddr, svPort);
+}
+
+startUDPServer(String svAddr, int svPort) async {
+  RawDatagramSocket socket = await RawDatagramSocket.bind(svAddr, svPort, reuseAddress: true);
+  socket.listen((RawSocketEvent event) {
+    if (event == RawSocketEvent.READ) {
+      Datagram dg = socket.receive();
+      String content = &quot;${dg.address.address},${dg.port}\n&quot;;
+      socket.send(UTF8.encode(content), dg.address, dg.port);
+    }
+  });
+}
+
+startTCPServer(String host, int port) async {
+  ServerSocket server = await ServerSocket.bind(host, port);
+  server.listen((Socket socket) {
+    String content = &quot;${socket.remoteAddress.address},${socket.remotePort}\n&quot;;
+    socket.add(UTF8.encode(content));
+  });
+}
+</code></pre><p>&#x3053;&#x308C;&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x304D;&#x305F;&#x3001;&#x7AEF;&#x672B;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3068;PORT&#x756A;&#x53F7;&#x3092;&#x8FD4;&#x3059;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3067;&#x3059;&#x3002;30&#x884C;&#x7A0B;&#x5EA6;&#x3067;&#x3059;&#x304C;&#x3001;&#x5341;&#x5206;&#x6A5F;&#x80FD;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h6 id="client&#x5074;&#x306E;&#x30B3;&#x30FC;&#x30C9;">Client&#x5074;&#x306E;&#x30B3;&#x30FC;&#x30C9;</h6>
+<pre><code>import &apos;dart:io&apos;;
+import &apos;dart:convert&apos;;
+
+main(List&lt;String&gt; args) async {
+  String clAddr = args[0];
+  int clPort = int.parse(args[1]);
+  String svAddr = args[2];
+  int svPort = int.parse(args[3]);
+
+  startUDPClient(clAddr, clPort, svAddr, svPort);
+  startTCPClient(svAddr, svPort);
+}
+
+startUDPClient(String clAddr, int clPort, String svAddr, int svPort) async {
+  RawDatagramSocket socket = await RawDatagramSocket.bind(clAddr, clPort, reuseAddress: true);
+  socket.listen((RawSocketEvent event) {
+    if (event == RawSocketEvent.READ) {
+      Datagram dg = socket.receive();
+      print(&quot;--&quot;);
+      print(&quot;  [receive udp] ${dg.address.address} ${dg.port}&quot;);
+      print(&quot;  ${UTF8.decode(dg.data,allowMalformed:true)}&quot;);
+      print(&quot;--&quot;);
+    }
+  });
+  socket.send(UTF8.encode(&quot;test&quot;), new InternetAddress(svAddr), svPort);
+}
+
+startTCPClient(String svAddr, int svPort) async {
+  Socket socket = await Socket.connect(svAddr, svPort);
+  socket.listen((List&lt;int&gt; data) {
+    print(&quot;--&quot;);
+    print(&quot;  [receive tcp]&quot;);
+    print(&quot;  ${UTF8.decode(data,allowMalformed:true)}&quot;);
+    print(&quot;--&quot;);
+  });
+  socket.add(UTF8.encode(&quot;&quot;));
+}
+</code></pre><p>client&#x5074;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3082;30&#x884C;&#x7A0B;&#x5EA6;&#x3067;&#x3059;&#x306D;!!</p>
+<h4 id="tcp-&#x3088;&#x308A;&#x3082;-udp&#x306E;&#x65B9;&#x304C;p2p&#x306B;&#x5411;&#x3044;&#x3066;&#x3044;&#x308B;">TCP &#x3088;&#x308A;&#x3082; UDP&#x306E;&#x65B9;&#x304C;P2P&#x306B;&#x5411;&#x3044;&#x3066;&#x3044;&#x308B;</h4>
+<p>&#x306F;&#x3044;&#x3001;UDP&#x3082;TCP&#x3082;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x7279;&#x5B9A;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;TCP&#x3060;&#x3068;&#x3001;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;Port&#x756A;&#x53F7;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x304C;&#x306A;&#x3044;&#x3067;&#x3059;&#x306D;&#x3002;</p>
+<pre><code>RawDatagramSocket socket = await RawDatagramSocket.bind(clAddr, clPort, reuseAddress: true);
+socket.send(UTF8.encode(&quot;test&quot;), new InternetAddress(svAddr), svPort);
+</code></pre><pre><code>  Socket socket = await Socket.connect(svAddr, svPort);
+  socket.add(UTF8.encode(&quot;&quot;));
+</code></pre><p>UDP&#x3067;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3068;&#x3057;&#x3066;&#x52D5;&#x4F5C;&#x3057;&#x3066;&#x3044;&#x308B;Socket&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x3057;&#x304B;&#x3057;&#x3001;TCP&#x3067;&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3078;&#x63A5;&#x7D9A;&#x5C02;&#x7528;&#x306E;Socket&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x305F;&#x3081;&#x3001;TCP&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3068;&#x3057;&#x3066;&#x5F85;&#x3061;&#x53D7;&#x3051;&#x3057;&#x3066;&#x3044;&#x308B;Socket&#x306E;IP&#x3068;Port&#x304C;&#x5B9F;&#x969B;&#x306B;&#x4F55;&#x3092;&#x6307;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x3001;&#x5224;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p>P2P&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;UDP&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x65B9;&#x304C;&#x3001;&#x3088;&#x308A;&#x9AD8;&#x3044;&#x78BA;&#x7387;&#x3067;P2P&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="2-&#x4ED6;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3082;&#x3089;&#x3046;">[2] &#x4ED6;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3082;&#x3089;&#x3046;</h2>
+<p>&#x3000;&#x5B9F;&#x969B;&#x306B;&#x5229;&#x7528;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x3001;[1]&#x306E;&#x65B9;&#x6CD5;&#x3067;&#x306F;&#x4E0A;&#x624B;&#x304F;&#x3044;&#x304B;&#x306A;&#x3044;&#x5834;&#x5408;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x4E0A;&#x624B;&#x304F;&#x3044;&#x304B;&#x306A;&#x304B;&#x3063;&#x305F;&#x3042;&#x306A;&#x305F;&#x3002;&#x304A;&#x3081;&#x3067;&#x3068;&#x3046;&#x3054;&#x3056;&#x3044;&#x307E;&#x3059;&#x3002;&#x81EA;&#x5206;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x4ED5;&#x7D44;&#x307F;&#x3092;&#x8272;&#x3005;&#x8A66;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x3001;&#x4E0A;&#x624B;&#x304F;&#x3044;&#x304B;&#x306A;&#x3044;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002; &#x4E0A;&#x624B;&#x304F;&#x3044;&#x304B;&#x306A;&#x3044;&#x3068;&#x3044;&#x306E;&#x306F;&#x3001;&#x6539;&#x5584;&#x306E;&#x30C1;&#x30E3;&#x30F3;&#x30B9;&#x3067;&#x3059;&#x306D;&#x3002;&#x3064;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x306D;&#x3002;&#x30EB;&#x30FC;&#x30BF;&#x30FC;&#x306B;&#x3088;&#x3063;&#x3066;&#x306F;&#x3001;&#x4E00;&#x6642;&#x7684;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x308B;IP&#x304C;&#x6BCE;&#x56DE;&#x5909;&#x308F;&#x3063;&#x305F;&#x308A;&#x3002;Port&#x756A;&#x53F7;&#x306E;&#x5BFE;&#x5FDC;&#x4ED8;&#x3051;&#x65B9;&#x6CD5;&#x304C;&#x3001;&#x6BCE;&#x56DE;&#x5909;&#x308F;&#x308B;&#x5834;&#x5408;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="&#x4E00;&#x6642;&#x7684;&#x306A;ip&#x304C;&#x5909;&#x308F;&#x308B;&#x5834;&#x5408;&#x3067;&#x3082;&#x3001;p2p&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;">&#x4E00;&#x6642;&#x7684;&#x306A;IP&#x304C;&#x5909;&#x308F;&#x308B;&#x5834;&#x5408;&#x3067;&#x3082;&#x3001;P2P&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;</h4>
+<p>&#x3000;&#x305D;&#x308C;&#x3067;&#x3082;&#x3001;&#x76F8;&#x624B;&#x3092;&#x9078;&#x3079;&#x3070;&#x3001;P2P&#x63A5;&#x7D9A;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;&#x81EA;&#x5206;&#x81EA;&#x4FE1;&#x306B;&#x306F;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x3082;&#x3089;&#x3048;&#x306A;&#x304F;&#x3066;&#x3082;&#x3001;&#x81EA;&#x5206;&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3057;&#x306B;&#x884C;&#x3051;&#x3070;&#x3001;&#x3064;&#x306A;&#x304C;&#x308A;&#x307E;&#x3059;&#x3002;
+ &#x901A;&#x4FE1;&#x76F8;&#x624B;&#x304C;&#x3001;Nat&#x8D8A;&#x3048;&#x53EF;&#x80FD;&#x306A;&#x5834;&#x5408;&#x306F;&#x3001;&#x3053;&#x3061;&#x3089;&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3057;&#x306B;&#x884C;&#x304F;&#x3068;&#x3044;&#x3046;&#x65B9;&#x6CD5;&#x304C;&#x6B8B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>\</th>
+<th>Nat&#x8D8A;&#x3048;&#x3067;&#x304D;&#x308B;</th>
+<th>Nat&#x8D8A;&#x3048;&#x3067;&#x304D;&#x306A;&#x3044;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nat&#x8D8A;&#x3048;&#x3067;&#x304D;&#x308B;</td>
+<td>P2P&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;</td>
+<td>P2P&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;</td>
+</tr>
+<tr>
+<td>Nat&#x8D8A;&#x3048;&#x3067;&#x304D;&#x306A;&#x3044;</td>
+<td>P2P&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;</td>
+<td>P2P&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x306A;&#x3044;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x3064;&#x307E;&#x308A;&#x3001;&#x305D;&#x306E;&#x7AEF;&#x672B;&#x306E;IP&#x306E;&#x72B6;&#x614B;&#x304C;&#x308F;&#x304B;&#x308B;&#x3068;&#x3001;&#x52B9;&#x7387;&#x826F;&#x304F;P2P&#x63A5;&#x7D9A;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="&#x524D;&#x3082;&#x3063;&#x3066;&#x8A66;&#x3057;&#x3066;&#x304A;&#x3053;&#x3046;">&#x524D;&#x3082;&#x3063;&#x3066;&#x8A66;&#x3057;&#x3066;&#x304A;&#x3053;&#x3046;!!</h4>
+<p>&#x3000;STUN&#x3067;&#x306F;&#x3001;&#x5225;IP&#x3001;&#x5225;PORT&#x304B;&#x3089;&#x3001;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x6301;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x524D;&#x3082;&#x3063;&#x3066;IP&#x306E;&#x72B6;&#x614B;&#x3092;&#x8ABF;&#x3079;&#x3066;&#x304A;&#x304F;&#x3068;&#x3044;&#x3046;&#x8A33;&#x3067;&#x3059;&#x306D;&#x3002;</p>
+<h6 id="server&#x5074;">Server&#x5074;</h6>
+<pre><code>import &apos;dart:io&apos;;
+import &apos;dart:convert&apos;;
+
+main(List&lt;String&gt; args) async {
+  String primaryAddr = args[0];
+  int primaryPort = int.parse(args[1]);
+  String secondaryAddr = args[2];
+  int secondaryPort = int.parse(args[3]);
+  startUDPServer(primaryAddr, primaryPort, secondaryAddr, secondaryPort);
+}
+
+startUDPServer(String primaryAddr, int primaryPort, String secondaryAddr, int secondaryPort) async {
+  RawDatagramSocket ppSocket = await RawDatagramSocket.bind(primaryAddr, primaryPort, reuseAddress: true);
+  RawDatagramSocket psSocket = await RawDatagramSocket.bind(primaryAddr, secondaryPort, reuseAddress: true);
+  RawDatagramSocket spSocket = await RawDatagramSocket.bind(secondaryAddr, primaryPort, reuseAddress: true);
+  RawDatagramSocket ssSocket = await RawDatagramSocket.bind(secondaryAddr, secondaryPort, reuseAddress: true);
+  Map sockets = {&quot;PP&quot;: ppSocket, &quot;PS&quot;: psSocket, &quot;SP&quot;: spSocket, &quot;SS&quot;: ssSocket};
+  ppSocket.listen((RawSocketEvent event) {
+    if (event == RawSocketEvent.READ) {
+      try {
+        Datagram dg = ppSocket.receive();
+        String request = UTF8.decode(dg.data);
+        String content = &quot;${dg.address.address},${dg.port}\n&quot;;
+        print(&quot;udp: ${request}&quot;);
+        RawDatagramSocket socket = sockets[request];
+        socket.send(UTF8.encode(content), dg.address, dg.port);
+      } catch (e) {}
+    }
+  });
+}
+</code></pre><h6 id="client&#x5074;">Client&#x5074;</h6>
+<pre><code>import &apos;dart:io&apos;;
+import &apos;dart:convert&apos;;
+
+main(List&lt;String&gt; args) async {
+  String clAddr = args[0];
+  int clPort = int.parse(args[1]);
+  String svAddr = args[2];
+  int svPort = int.parse(args[3]);
+  String type = args[4];
+  startUDPClient(clAddr, clPort, svAddr, svPort, type);
+}
+
+startUDPClient(String clAddr, int clPort, String svAddr, int svPort, String type) async {
+  RawDatagramSocket socket = await RawDatagramSocket.bind(clAddr, clPort, reuseAddress: true);
+  socket.listen((RawSocketEvent event) {
+    if (event == RawSocketEvent.READ) {
+      Datagram dg = socket.receive();
+      print(&quot;--&quot;);
+      print(&quot;  [receive udp] ${dg.address.address} ${dg.port}&quot;);
+      print(&quot;  ${UTF8.decode(dg.data,allowMalformed:true)}&quot;);
+      print(&quot;--&quot;);
+    }
+  });
+  print(&quot;##send ${type}&quot;);
+  socket.send(UTF8.encode(&quot;${type}&quot;), new InternetAddress(svAddr), svPort);
+}
+</code></pre><p>&#x3069;&#x3046;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;30&#x884C;&#x7A0B;&#x5EA6;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x3057;&#x305F;&#x3002;</p>
+<h4 id="stun-&#x306E;&#x5206;&#x985E;&#x65B9;&#x6CD5;">STUN &#x306E;&#x5206;&#x985E;&#x65B9;&#x6CD5;</h4>
+<p>STUN&#x3067;&#x306F;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x7D30;&#x304B;&#x304F;&#x5206;&#x985E;&#x3057;&#x3066;&#x304F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>\</th>
+<th>PP</th>
+<th>PS</th>
+<th>SP</th>
+<th>SS</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UDP Blocked</td>
+<td>x</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>Open Internet</td>
+<td>o</td>
+<td>-</td>
+<td>-</td>
+<td>o</td>
+<td>ifconfig&#x306E;IP&#x3068;PORT&#x304C;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x304C;&#x540C;&#x3058;</td>
+</tr>
+<tr>
+<td>Symmetric UDP Firewall</td>
+<td>o</td>
+<td>-</td>
+<td>-</td>
+<td>x</td>
+<td>ifconfig&#x306E;IP&#x3068;PORT&#x304C;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x304C;&#x540C;&#x3058;</td>
+</tr>
+<tr>
+<td>Full Cone</td>
+<td>o</td>
+<td>-</td>
+<td>-</td>
+<td>o</td>
+<td>ifconfig&#x306E;IP&#x3068;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x3068;PORT&#x304C;&#x9055;&#x3046;</td>
+</tr>
+<tr>
+<td>Symmetric NAT</td>
+<td>o</td>
+<td>-</td>
+<td>-</td>
+<td>x</td>
+<td>ifconfig&#x306E;IP&#x3068;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x3068;PORT&#x304C;&#x9055;&#x3046;&#x3002; &#x8907;&#x6570;&#x56DE;&#x8A66;&#x3057;&#x3066;&#x3082;&#x3001;&#x7570;&#x306A;&#x308B;IP&#x3068;PORT&#x304C;&#x8FD4;&#x308B;</td>
+</tr>
+<tr>
+<td>Restricted</td>
+<td>o</td>
+<td>o</td>
+<td>-</td>
+<td>x</td>
+<td>ifconfig&#x306E;IP&#x3068;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x3068;PORT&#x304C;&#x9055;&#x3046;&#x3002; &#x8907;&#x6570;&#x56DE;&#x8A66;&#x3057;&#x3066;&#x3082;&#x3001;&#x540C;&#x3058;IP&#x3068;PORT&#x304C;&#x8FD4;&#x308B;</td>
+</tr>
+<tr>
+<td>Port Restricted</td>
+<td>o</td>
+<td>x</td>
+<td>-</td>
+<td>x</td>
+<td>ifconfig&#x306E;IP&#x3068;STUN&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;IP&#x3068;PORT&#x304C;&#x9055;&#x3046;&#x3002; &#x8907;&#x6570;&#x56DE;&#x8A66;&#x3057;&#x3066;&#x3082;&#x3001;&#x540C;&#x3058;IP&#x3068;PORT&#x304C;&#x8FD4;&#x308B;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x3068;&#x3044;&#x3063;&#x305F;&#x611F;&#x3058;&#x3067;&#x3059;&#x3002;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x6A5F;&#x80FD;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x5F85;&#x3061;&#x53D7;&#x3051;&#x3067;&#x304D;&#x308B;&#x306E;&#x306F;&#x3001;&quot;Open Internet&quot; &#x3068; &quot;Full Cone&quot;&#x3000;&#x306E;&#x307F;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="aboutstun.html" class="navigation navigation-prev " aria-label="Previous page: STUNとは">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="implement.html" class="navigation navigation-next " aria-label="Next page: 実装してみよう">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Nat越えしてみよう","level":"1.4","depth":1,"next":{"title":"実装してみよう","level":"1.5","depth":1,"path":"implement.md","ref":"implement.md","articles":[]},"previous":{"title":"STUNとは","level":"1.3","depth":1,"path":"aboutstun.md","ref":"aboutstun.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"nattraversal.md","mtime":"2017-08-29T17:48:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-29T17:48:45.854Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
